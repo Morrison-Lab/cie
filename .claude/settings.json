@@ -1,0 +1,10 @@
+{
+  "extraKnownMarketplaces": {
+    "Morrison-Lab": {
+      "source": {
+        "source": "github",
+        "repo": "Morrison-Lab/ai-config"
+      }
+    }
+  }
+}
