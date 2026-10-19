@@ -1,5 +1,10 @@
 project:
   type: book
+  # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
+  pre-render: python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
+  resources:
+    - dependency-graph.js
+    - dependency-graph.json
   output-dir: _book
 
 book:
@@ -45,6 +50,8 @@ book:
 
 format:
   html:
+    include-after-body:
+      - text: '<script src="dependency-graph.js" defer></script>'
     lightbox: true
     link-external-icon: true
     embed-resources: false # breaks pdf version
