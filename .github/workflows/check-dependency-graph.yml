@@ -1,0 +1,17 @@
+name: Check Dependency Graph
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check:
+    permissions:
+      contents: read
+    uses: Morrison-Lab/gha/.github/workflows/check-dependency-graph.yml@v3
+    with:
+      pages-dir: .
