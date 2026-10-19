@@ -1,7 +1,7 @@
 project:
   type: book
   # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
-  pre-render: python3 tools/build_dependency_graph.py --pages . --out dependency-graph.json
+  pre-render: python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
   resources:
     - dependency-graph.js
     - dependency-graph.json
