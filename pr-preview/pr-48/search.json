@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Causal Inference in Epidemiology",
+    "section": "",
+    "text": "Preface\nThis will be an online book about causal inference.\nHere are some other resources for learning causal inference:",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#uc-davis-courses",
+    "href": "index.html#uc-davis-courses",
+    "title": "Causal Inference in Epidemiology",
+    "section": "UC Davis courses",
+    "text": "UC Davis courses\n\nEPI 205 “Principles of Epidemiology”\nEPI 206 “Epidemiologic Study Design”\nEPI/SPH 207 “Advanced Epidemiologic Methodology”\nEPI 225 “Advanced Topics in Epidemiology Methods”\nPOL 285 “Statistics of Causal Inference in Political Science”\nMGB/MGP/MGT 454A “Causal Inference and Statistical Experiments”\n\nsyllabus: https://webapps.aws.ucdavis.edu/public/documents/4861649/Syllabushttps://schedule.aws.ucdavis.edu/public/documents/5319910/Syllabus\n\nPSC 204B “Causal Modeling of Correlational Data”\nPSC 205C “Structural Equation Modeling”\n\nCourse search options:\n\nhttps://schedule.aws.ucdavis.edu/courseScheduling\nhttps://catalog.ucdavis.edu/course-search/\nhttps://catalog.ucdavis.edu/courses-subject-code/",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#online-videos",
+    "href": "index.html#online-videos",
+    "title": "Causal Inference in Epidemiology",
+    "section": "Online Videos",
+    "text": "Online Videos\n\n“Introduction to Causal Inference” (slides here)\nOnline Causal Inference Seminar series",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#uc-davis-datalab-learning-group",
+    "href": "index.html#uc-davis-datalab-learning-group",
+    "title": "Causal Inference in Epidemiology",
+    "section": "UC Davis Datalab learning group",
+    "text": "UC Davis Datalab learning group\n\nhttps://datalab.ucdavis.edu/causal-inference/\n\nReading list\n\n\nOther links:\n\nhttps://cameron.econ.ucdavis.edu/causal/\nhttps://datalab-icmat.github.io/causal_reading_group.html\nLab exercises by Ben Noble: https://github.com/bennoble/causal-inference-2022",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#books",
+    "href": "index.html#books",
+    "title": "Causal Inference in Epidemiology",
+    "section": "Books",
+    "text": "Books\n\nJudea Pearl (2016)\nHernán and Robins (2020)\n\n\n\n\n\n\n\nHernán, MA, and J Robins. 2020. “Causal Inference: What If. Boca Raton: Chapman & Hill/Crc.(2020).” Publisher’s Note Springer Nature Remains Neutral with Regard to Jurisdictional Claims in Published Maps and Institutional Affiliations. https://miguelhernan.org/whatifbook.\n\n\nJudea Pearl, Nicholas P. Jewell, Madelyn Glymour. 2016. Causal Inference in Statistics: A Primer. 1st ed. Wiley.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro-causal.html",
+    "href": "intro-causal.html",
+    "title": "1  Introduction to causal inference",
+    "section": "",
+    "text": "1.1 Introduction\nHernán and Robins (2020) (page vii):",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to causal inference</span>"
+    ]
+  },
+  {
+    "objectID": "intro-causal.html#introduction",
+    "href": "intro-causal.html#introduction",
+    "title": "1  Introduction to causal inference",
+    "section": "",
+    "text": "Unfortunately, the scientific literature is plagued by studies in which the causal question is not explicitly stated and the investigators’ unverifiable assumptions are not declared. This casual attitude towards causal inference has led to a great deal of confusion.\n\n\nRigorously defining cause and effect is difficult. Fortunately, many humans have strong intuitions about these concepts. We will make cursory attempts at definitions for the basic terms, and leave the finer points to philosophers.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to causal inference</span>"
+    ]
+  },
+  {
+    "objectID": "intro-causal.html#individual-causal-effects",
+    "href": "intro-causal.html#individual-causal-effects",
+    "title": "1  Introduction to causal inference",
+    "section": "1.2 Individual causal effects",
+    "text": "1.2 Individual causal effects\n\n\nDefinition 1.1 (Action, intervention, exposure, policy, treatment) An action (also called an intervention, exposure, policy, or treatment) is a choice that we consider making.\n\n\n\nDefinition 1.2 (Random variable) A random variable is a variable that may have different values for different individuals and/or for different actions/exposures that an individual might experience. 1\n\n\n\nDefinition 1.3 (potential outcome, consequence) A potential outcome of action \\(a\\) (also called a consequence of \\(a\\)) is the value of a random variable \\(Y\\) that would occur if we were to take action \\(a\\). The potential outcome of action \\(a\\) on random variable \\(Y\\) is often denoted \\(Y(a)\\), \\(Y^a\\), or \\(Y^{A=a}\\). We will use notation \\(Y(a)\\).\n\n\n\nDefinition 1.4 (Factual outcome, observed outcome) A factual outcome (or observed outcome) is the potential outcome corresponding to an action that was actually taken.\n\n\nIf we consider taking action \\(a\\) or an alternative \\(a'\\), and we actually take action \\(A=a\\), then \\(Y(a)\\) is the factual outcome.\n\n\n\nDefinition 1.5 (Counterfactual outcome) A counterfactual outcome is a potential outcome corresponding to an action that was not actually taken.\n\n\nIf we consider taking action \\(a\\) or an alternative \\(a'\\), and we actually take action \\(A=a\\), then \\(Y(a')\\) is a counterfactual outcome.\nThere might be more than one counterfactual outcome, depending on how many action options were considered, but there can only ever be one factual outcome per random variable.\n\n\n\nDefinition 1.6 (Cause) Action \\(a\\) causes outcome \\(y\\) (or is a cause of \\(y\\)) if:\n\noutcome \\(y\\) would occur if we were to take action \\(a\\)\nand\n\noutcome \\(y\\) would not occur if we did not take action \\(a\\).\n\nIn other words, if:\n\n\\(Y(a) = y\\)\nand\n\n\\(\\exists a' \\neq a: Y(a') \\neq y\\)\n\n\n\n\nDefinition 1.7 (effect) The effect of action \\(a\\) on outcome \\(Y\\), relative to a given alternative action \\(a'\\), is the contrast in potential outcomes, \\(Y(a)\\) versus \\(Y(a')\\).\n\n\n\nDefinition 1.8 (Consistency) Consistency is the assumption that if we observe an action \\(a\\), then the observed outcome \\(Y\\) is equal to the “factual potential outcome” corresponding to action \\(a\\); in other words, if \\(A=a\\), then \\(Y(a) = Y\\).\n\n\n\nDefinition 1.9 (Exchangeability) Subpopulations defined by exposure \\(X\\) are exchangeable with respect to a potential outcome \\(Y(x)\\) if the distribution of \\(Y(x)\\) does not depend on the observed exposure \\(X\\):\n\\[Y(x) \\perp\\!\\!\\!\\perp X\\]\n\n\n\nTheorem 1.1 If subpopulations defined by values of exposure \\(X\\) are exchangeable with respect to potential outcome \\(Y(x)\\), then the expected value of \\(Y(x)\\) does not depend on the observed value of \\(X\\):\n\\[\\text{E}{\\left[Y(x) | X = x'\\right]} = \\text{E}{\\left[Y(x) | X = x\\right]}\\]\n\n\n\nDefinition 1.10 (Conditional exchangeability) Subpopulations defined by exposure \\(X\\) are exchangeable with respect to a potential outcome \\(Y(x)\\) if the distribution of \\(Y(x)\\) does not depend on the observed exposure \\(X\\), conditional on covariate(s) \\(Z\\):\n\\[Y(x) \\perp\\!\\!\\!\\perp X | \\tilde{Z}\\]\n\n\n\nTheorem 1.2 If subpopulations defined by values of exposure \\(X\\) are conditionally exchangeable with respect to potential outcome \\(Y(x)\\) given covariate \\(\\tilde{Z}\\), then the expected value of \\(Y(x)\\) does not depend on the observed value of \\(X\\):\n\\[\\text{E}{\\left[Y(x) | X = x', \\tilde{Z}=\\tilde{z}\\right]} = \\text{E}{\\left[Y(x) | X = x, \\tilde{Z}=\\tilde{z}\\right]}\\]\n\n\n\nDefinition 1.11 (Fundamental problem of causal inference) The fundamental problem of causal inference is that only one potential outcome (the factual outcome) can be observed per person (or per sampling unit, more generally) (Holland 1986). The other, counterfactual outcomes, are all missing data, and thus, the causal effects are all missing data as well.\n\n\n\n\n\n\n\nHernán, MA, and J Robins. 2020. “Causal Inference: What If. Boca Raton: Chapman & Hill/Crc.(2020).” Publisher’s Note Springer Nature Remains Neutral with Regard to Jurisdictional Claims in Published Maps and Institutional Affiliations. https://miguelhernan.org/whatifbook.\n\n\nHolland, Paul W. 1986. “Statistics and Causal Inference.” Journal of the American Statistical Association 81 (396): 945–60. https://doi.org/10.1080/01621459.1986.10478354.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to causal inference</span>"
+    ]
+  },
+  {
+    "objectID": "intro-causal.html#footnotes",
+    "href": "intro-causal.html#footnotes",
+    "title": "1  Introduction to causal inference",
+    "section": "",
+    "text": "adapted from Hernán and Robins (2020) p3↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to causal inference</span>"
+    ]
+  },
+  {
+    "objectID": "collider-bias.html",
+    "href": "collider-bias.html",
+    "title": "2  Collider bias",
+    "section": "",
+    "text": "2.1 Definition\nA collider is a variable that is caused by two or more other variables in a causal diagram (directed acyclic graph or DAG) (Catalog of Bias Collaboration 2024). The term “collider” comes from the visual representation where multiple arrows “collide” into the variable.\nThe basic collider structure is an inverted fork (V-structure):\nMore complex patterns exist, such as M-structures where multiple colliders are connected in chains, creating additional opportunities for bias when conditioning on any collider in the structure.\nInappropriately controlling for a collider variable, by study design or statistical analysis, results in collider bias (Catalog of Bias Collaboration 2024).\nControlling for a collider can induce a distorted association between the exposure and outcome when in fact none exists. This bias predominantly occurs in observational studies.\nBecause collider bias can be induced by sampling (restricting the study to certain values of the collider), selection bias can sometimes be considered to be a form of collider bias (Catalog of Bias Collaboration 2024).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Collider bias</span>"
+    ]
+  },
+  {
+    "objectID": "collider-bias.html#definition",
+    "href": "collider-bias.html#definition",
+    "title": "2  Collider bias",
+    "section": "",
+    "text": "Exposure → Collider ← Outcome",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Collider bias</span>"
+    ]
+  },
+  {
+    "objectID": "collider-bias.html#classic-example-sacketts-hospitalized-patients",
+    "href": "collider-bias.html#classic-example-sacketts-hospitalized-patients",
+    "title": "2  Collider bias",
+    "section": "2.2 Classic example: Sackett’s hospitalized patients",
+    "text": "2.2 Classic example: Sackett’s hospitalized patients\nA classic example of collider bias was provided by Sackett (1979) and discussed by Catalog of Bias Collaboration (2024). He analyzed data from 257 hospitalized individuals and detected an association between locomotor disease and respiratory disease (odds ratio 4.06). However, when he repeated the analysis in a sample of 2,783 individuals from the general population, he found no association (odds ratio 1.06). The original analysis of hospitalized individuals was biased because both diseases caused individuals to be hospitalized. By looking only within the stratum of hospitalized individuals, Sackett had observed a distorted association. In this example, locomotor disease and respiratory disease are independent causes of hospitalization—the collider. Controlling for the collider by study design (selection bias) induced a distorted association between the two diseases.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Collider bias</span>"
+    ]
+  },
+  {
+    "objectID": "collider-bias.html#modern-example-the-obesity-paradox",
+    "href": "collider-bias.html#modern-example-the-obesity-paradox",
+    "title": "2  Collider bias",
+    "section": "2.3 Modern example: The obesity paradox",
+    "text": "2.3 Modern example: The obesity paradox\nA more recent example can be seen in the “obesity paradox”—an apparent protective effect of obesity on mortality in individuals with chronic conditions such as cardiovascular disease (CVD) (Catalog of Bias Collaboration 2024). In fact, obesity increases mortality rates in the general population. The collider bias occurs when investigators condition on CVD (by design or analysis), resulting in a distorted association. Consequently, in a sample that includes only patients with CVD, obesity falsely appears to protect against mortality, whereas in the wider population, obesity increases the risk of early death. Banack and Kaufman (2014) showed using the third US National Health and Nutrition Examination Survey (NHANES III) that the unbiased mortality risk ratio for the entire cohort was 1.24 [95% CI = 1.11, 1.39] (harmful), but the biased stratum-specific mortality risk ratio in patients with CVD was 0.79 [95% CI = 0.68, 0.91] (protective).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Collider bias</span>"
+    ]
+  },
+  {
+    "objectID": "collider-bias.html#prevention",
+    "href": "collider-bias.html#prevention",
+    "title": "2  Collider bias",
+    "section": "2.4 Prevention",
+    "text": "2.4 Prevention\nCollider bias can be prevented by carefully applying appropriate inclusion criteria—making sure that the exposure and outcome of interest do not drive inclusion or selective retention in a study (Catalog of Bias Collaboration 2024). Causal diagrams (directed acyclic graphs or DAGs) can help identify colliders that should be left uncontrolled and confounders that should be controlled.\nFor more detailed information about collider bias, including causal diagrams and additional examples, see Catalog of Bias Collaboration (2024).\n\n\n\n\n\n\nBanack, Hailey R., and Jay S. Kaufman. 2014. “The Obesity Paradox: Understanding the Effect of Obesity on Mortality Among Individuals with Cardiovascular Disease.” Preventive Medicine 62: 96–102. https://doi.org/10.1016/j.ypmed.2014.02.001.\n\n\nCatalog of Bias Collaboration. 2024. Collider Bias. https://catalogofbias.org/biases/collider-bias/.\n\n\nSackett, D. L. 1979. “Bias in Analytic Research.” Journal of Chronic Diseases 32 (1-2): 51–63. https://doi.org/10.1016/0021-9681(79)90012-2.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Collider bias</span>"
+    ]
+  },
+  {
+    "objectID": "bias-analyses.html",
+    "href": "bias-analyses.html",
+    "title": "3  Bias analyses",
+    "section": "",
+    "text": "“Continuation of Annual Screening Mammography and Breast Cancer Mortality in Women Older Than 70 Years” (2020), supplementary materials p16:\n\nA sensitivity analysis for unmeasured confounding can only conclude that, if there is much unmeasured confounding, there will be much bias in the estimates and, conversely, if there is little unmeasured confounding, there will be little bias in the estimates. But, if the magnitude of unmeasured confounding is unknown (as it often is), then the magnitude of confounding bias is also unknown. That is, sensitivity analysis for unmeasured confounding is, by definition, uninformative. The situation is different when investigators have some information about the unmeasured confounder(s). For example, our analysis did not adjust for cigarette smoking, which may be associated with both breast cancer screening (because smokers are less likely to use preventive services) and breast cancer death. If we knew the prevalence of smoking in screening-defined groups and the association between smoking and breast cancer death, then we could use published methods to correct the confounded effect estimates.\n\n\nUnfortunately, these methods assume that the residual confounding can be summarized by a single variable that happens to be dichotomous, time-fixed, and unassociated with all measured variables that were adjusted for in the analysis (Lash et al. 2009; Schneeweiss 2006).\n\nSee also Fox et al. (2022) for an updated reference.\n\n\n\n\n\n\n“Continuation of Annual Screening Mammography and Breast Cancer Mortality in Women Older Than 70 Years.” 2020. Annals of Internal Medicine 172 (6): 381–89. https://doi.org/10.7326/M18-1199.\n\n\nFox, Matthew P., Richard F. MacLehose, and Timothy L. Lash. 2022. Applying Quantitative Bias Analysis to Epidemiologic Data. Second edition. Statistics for Biology and Health. Springer. https://doi.org/10.1007/978-3-030-82673-4.\n\n\nLash, Timothy L., Matthew P. Fox, and Aliza K. Fink. 2009. Applying Quantitative Bias Analysis to Epidemiologic Data. 1st ed. Statistics for Biology and Health. Springer. https://doi.org/10.1007/978-0-387-87959-8.\n\n\nSchneeweiss, Sebastian. 2006. “Sensitivity Analysis and External Adjustment for Unmeasured Confounders in Epidemiologic Database Studies of Therapeutics.” Pharmacoepidemiology and Drug Safety 15 (5): 291–303. https://doi.org/https://doi.org/10.1002/pds.1200.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Bias analyses</span>"
+    ]
+  },
+  {
+    "objectID": "d_in_d.html",
+    "href": "d_in_d.html",
+    "title": "\n4  Difference in differences analyses\n",
+    "section": "",
+    "text": "4.1 Change in Changes\nMany approaches to causal inference assume exchangeability (Definition 1.10) and exploit its consequence (Theorem 1.1):\n\\[\\text{E}{\\left[Y(x) | X = x'\\right]} = \\text{E}{\\left[Y(x) | X = x\\right]}\\]\nDifference-in-differences makes a weaker exchangeability assumption:\n\\[\\text{E}{\\left[Y_t(0) - Y_{t'}(0) | X = 1\\right]} = \\text{E}{\\left[Y_t(0) - Y_{t'}(0) | X = 0\\right]}\\]\nThe Change in Changes (CiC) model (Athey and Imbens 2006) is a DiD-type method that estimates the Quantile Treatment Effect on the Treated (QTET) — that is, treatment effects across the full distribution of outcomes, not just the mean (Callaway 2024).\nCiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data (Callaway 2024).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Difference in differences analyses</span>"
+    ]
+  },
+  {
+    "objectID": "d_in_d.html#change-in-changes",
+    "href": "d_in_d.html#change-in-changes",
+    "title": "\n4  Difference in differences analyses\n",
+    "section": "",
+    "text": "4.1.1 Assumption\nRather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the distribution of untreated potential outcomes evolves over time in the same way for both treated and control groups (Athey and Imbens 2006).\n\n4.1.2 Covariate adjustment\nCiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals (Athey and Imbens 2006; Callaway 2024).\n\n4.1.3 R implementation\nThe CiC() function in the qte R package (Callaway 2024) implements this estimator. Key arguments are (note: formla and xformla are the actual argument names in the package):\n\n\n\n\n\n\nArgument\nDescription\n\n\n\nformla\n\ny ~ d where y is the outcome and d is a binary treatment indicator\n\n\nxformla\nOptional one-sided formula for additional covariates (e.g., ~ age + education)\n\n\nt\nPost-treatment time period\n\n\ntmin1\nPre-treatment time period\n\n\ntname\nName of the column containing the time variable\n\n\ndata\nData frame containing all variables\n\n\npanel\n\nTRUE if the dataset is panel data\n\n\nprobs\nVector of quantile levels at which to estimate the QTET\n\n\niters\nNumber of bootstrap iterations for standard errors\n\n\n\nThe function returns a QTE object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in probs.\n\n4.1.4 Example\nThe following example from Callaway (2024) estimates the QTET for the National Supported Work Demonstration job-training program using the lalonde.psid.panel dataset, conditioning on several pre-treatment characteristics:\n\nShow R codelibrary(qte)\ndata(lalonde)\n\nc1 &lt;- CiC(\n  re ~ treat,\n  t = 1978, tmin1 = 1975, tname = \"year\",\n  xformla = ~ age + I(age^2) + education + black + hispanic + married + nodegree,\n  data = lalonde.psid.panel, idname = \"id\",\n  se = FALSE, probs = seq(0.05, 0.95, 0.05)\n)\n\nsummary(c1)\n#&gt; \n#&gt; Overall ATT:  \n#&gt;  round(ate, 4)\n#&gt;        4629.24\n#&gt; \n#&gt; \n#&gt; QTT:\n#&gt;   Tau      QTT\n#&gt;  0.05    0.000\n#&gt;  0.10    0.000\n#&gt;  0.15    0.000\n#&gt;  0.20    0.000\n#&gt;  0.25  485.230\n#&gt;  0.30  929.884\n#&gt;  0.35 1460.360\n#&gt;  0.40 2321.110\n#&gt;  0.45 3462.560\n#&gt;  0.50 4232.310\n#&gt;  0.55 5010.340\n#&gt;  0.60 6210.670\n#&gt;  0.65 7458.110\n#&gt;  0.70 7508.974\n#&gt;  0.75 8210.837\n#&gt;  0.80 8332.693\n#&gt;  0.85 8515.980\n#&gt;  0.90 8821.998\n#&gt;  0.95 8273.740\n#&gt; ---\n#&gt; Signif. codes: `*' confidence band does not cover 0\n\n\nThe resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 (Callaway 2024).\n\n\n\n\n\n\nAthey, Susan, and Guido Imbens. 2006. “Identification and Inference in Nonlinear Difference-in-Differences Models.” Econometrica 74 (2): 431–97. https://doi.org/10.1111/j.1468-0262.2006.00668.x.\n\n\nCallaway, Brantly. 2024. CiC: Change in Changes Estimator for Quantile Treatment Effects. https://bcallaway11.github.io/qte/reference/CiC.html.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Difference in differences analyses</span>"
+    ]
+  },
+  {
+    "objectID": "further-resources.html",
+    "href": "further-resources.html",
+    "title": "5  Further resources",
+    "section": "",
+    "text": "5.1 The Catalog of Bias\nThe Catalog of Bias (Catalog of Bias Collaboration 2024) is a collaborative project mapping all the biases that affect health evidence. The catalog provides:\nThe catalog is an invaluable resource for researchers, clinicians, policymakers, journalists, and the public who seek to better understand threats to research validity.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Further resources</span>"
+    ]
+  },
+  {
+    "objectID": "further-resources.html#the-catalog-of-bias",
+    "href": "further-resources.html#the-catalog-of-bias",
+    "title": "5  Further resources",
+    "section": "",
+    "text": "Clear definitions and explanations of various biases\nReal-world examples from health research\nDirected acyclic graphs (DAGs) illustrating bias mechanisms\nGuidance on study design and analysis to prevent or minimize bias\n\n\n\n\n\n\n\n\nCatalog of Bias Collaboration. 2024. Catalog of Bias. https://catalogofbias.org/.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Further resources</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "\n6  Summary\n",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\nShow R code1 + 1\n#&gt; [1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Athey, Susan, and Guido Imbens. 2006. “Identification and\nInference in Nonlinear Difference-in-Differences Models.”\nEconometrica 74 (2): 431–97. https://doi.org/10.1111/j.1468-0262.2006.00668.x.\n\n\nBanack, Hailey R., and Jay S. Kaufman. 2014. “The Obesity Paradox:\nUnderstanding the Effect of Obesity on Mortality Among Individuals with\nCardiovascular Disease.” Preventive Medicine 62: 96–102.\nhttps://doi.org/10.1016/j.ypmed.2014.02.001.\n\n\nCallaway, Brantly. 2024. CiC: Change in Changes\nEstimator for Quantile Treatment Effects. https://bcallaway11.github.io/qte/reference/CiC.html.\n\n\nCatalog of Bias Collaboration. 2024a. Catalog of Bias. https://catalogofbias.org/.\n\n\nCatalog of Bias Collaboration. 2024b. Collider Bias. https://catalogofbias.org/biases/collider-bias/.\n\n\n“Continuation of Annual Screening Mammography and Breast Cancer\nMortality in Women Older Than 70 Years.” 2020. Annals of\nInternal Medicine 172 (6): 381–89. https://doi.org/10.7326/M18-1199.\n\n\nFox, Matthew P., Richard F. MacLehose, and Timothy L. Lash. 2022.\nApplying Quantitative Bias Analysis to Epidemiologic Data.\nSecond edition. Statistics for Biology and Health. Springer. https://doi.org/10.1007/978-3-030-82673-4.\n\n\nHernán, MA, and J Robins. 2020. “Causal Inference: What If. Boca\nRaton: Chapman & Hill/Crc.(2020).” Publisher’s Note\nSpringer Nature Remains Neutral with Regard to Jurisdictional Claims in\nPublished Maps and Institutional Affiliations. https://miguelhernan.org/whatifbook.\n\n\nHolland, Paul W. 1986. “Statistics and Causal Inference.”\nJournal of the American Statistical Association 81 (396):\n945–60. https://doi.org/10.1080/01621459.1986.10478354.\n\n\nJudea Pearl, Nicholas P. Jewell, Madelyn Glymour. 2016. Causal\nInference in Statistics: A Primer. 1st ed. Wiley.\n\n\nLash, Timothy L., Matthew P. Fox, and Aliza K. Fink. 2009. Applying\nQuantitative Bias Analysis to Epidemiologic Data. 1st ed.\nStatistics for Biology and Health. Springer. https://doi.org/10.1007/978-0-387-87959-8.\n\n\nSackett, D. L. 1979. “Bias in Analytic Research.”\nJournal of Chronic Diseases 32 (1-2): 51–63. https://doi.org/10.1016/0021-9681(79)90012-2.\n\n\nSchneeweiss, Sebastian. 2006. “Sensitivity Analysis and External\nAdjustment for Unmeasured Confounders in Epidemiologic Database Studies\nof Therapeutics.” Pharmacoepidemiology and Drug Safety\n15 (5): 291–303. https://doi.org/https://doi.org/10.1002/pds.1200.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
