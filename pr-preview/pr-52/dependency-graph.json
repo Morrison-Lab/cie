@@ -1,0 +1,126 @@
+{
+ "site": "cie",
+ "meaning": "edge [A, B] means A uses B: B is a prerequisite of A, A a postrequisite of B",
+ "nodes": [
+  {
+   "id": "cie/intro-causal#def-action",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-action",
+   "kind": "def",
+   "title": "Action, intervention, exposure, policy, treatment",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-cause",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-cause",
+   "kind": "def",
+   "title": "Cause",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-cond-exch",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-cond-exch",
+   "kind": "def",
+   "title": "Conditional exchangeability",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-consistency",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-consistency",
+   "kind": "def",
+   "title": "Consistency",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-counterfactual",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-counterfactual",
+   "kind": "def",
+   "title": "Counterfactual outcome",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-effect",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-effect",
+   "kind": "def",
+   "title": "effect",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-exch",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-exch",
+   "kind": "def",
+   "title": "Exchangeability",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-factual-outcome",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-factual-outcome",
+   "kind": "def",
+   "title": "Factual outcome, observed outcome",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-fund-causal-problem",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-fund-causal-problem",
+   "kind": "def",
+   "title": "Fundamental problem of causal inference",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-potential-outcome",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-potential-outcome",
+   "kind": "def",
+   "title": "potential outcome, consequence",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#def-rv",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "def-rv",
+   "kind": "def",
+   "title": "Random variable",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#thm-cond-exch",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "thm-cond-exch",
+   "kind": "thm",
+   "title": "thm-cond-exch",
+   "external": false
+  },
+  {
+   "id": "cie/intro-causal#thm-exch",
+   "site": "cie",
+   "page": "intro-causal",
+   "div": "thm-exch",
+   "kind": "thm",
+   "title": "thm-exch",
+   "external": false
+  }
+ ],
+ "edges": [],
+ "cycles": [],
+ "forwardReferences": []
+}
