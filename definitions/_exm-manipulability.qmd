@@ -1,0 +1,15 @@
+:::{#exm-manipulability}
+<!-- no-figure: conceptual example with no data to plot -->
+
+#### Manipulability and a patient's sex
+
+"What is the effect of a smoking-cessation program on lung cancer risk?"
+names an intervention that can be assigned,
+so it fits the manipulability account.
+
+"What is the effect of a patient's sex on lung cancer risk?"
+does not name an intervention.
+On this account the question is not well posed
+until we say which intervention is meant.
+
+:::

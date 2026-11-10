@@ -1,0 +1,12 @@
+:::{#exm-probabilistic-view}
+<!-- no-figure: conceptual example with no data to plot -->
+
+#### Probability raising and smoking
+
+Smoking raises the probability of lung cancer
+among people who are alike in age and other relevant factors,
+and it does not make lung cancer certain.
+Under the probabilistic view,
+that is enough for smoking to be a cause of lung cancer.
+
+:::

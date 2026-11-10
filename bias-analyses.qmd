@@ -1,5 +1,5 @@
 {{< include macros.qmd >}}
 
-# Bias analyses
+# Bias analyses {#sec-bias-analyses}
 
 {{< include _sec-bias-analyses.qmd >}}

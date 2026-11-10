@@ -1,0 +1,11 @@
+:::{#def-regularity-view}
+
+#### Regularity view of causation
+
+On the **regularity view**,
+saying that $A$ causes $B$ means that
+events like $A$ are always followed by events like $B$,
+with $A$ coming first
+and the two occurring close together in space and time.
+
+:::

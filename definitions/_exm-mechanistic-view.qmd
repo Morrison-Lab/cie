@@ -1,0 +1,14 @@
+:::{#exm-mechanistic-view}
+<!-- no-figure: conceptual example with no data to plot -->
+
+#### Mechanism and smoking
+
+A mechanistic account of smoking and lung cancer
+would describe the steps between inhaling smoke
+and the growth of a tumor,
+such as damage to cells' DNA.
+Evidence about such steps
+can support the causal claim
+alongside the statistical evidence.
+
+:::
