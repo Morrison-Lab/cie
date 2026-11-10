@@ -1,6 +1,6 @@
 {{< include macros.qmd >}}
 
-# Introduction to causal inference
+# Introduction to causal inference {#sec-intro-causal}
 
 ## Introduction
 

@@ -26,6 +26,7 @@ book:
   chapters:
     - index.qmd
     - intro-causal.qmd
+    - philosophy-of-causality.qmd
     - collider-bias.qmd
     - bias-analyses.qmd
     - d_in_d.qmd
