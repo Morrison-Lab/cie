@@ -6,6 +6,6 @@ If subpopulations defined by values of exposure $X$ are
 exchangeable with respect to potential outcome $Y(x)$,
 then the expected value of $Y(x)$ does not depend on the observed value of $X$:
 
-$$\thmExch$$
+$$\Expf{Y(x) | X = x'} = \Expf{Y(x) | X = x}$$
 
 :::
