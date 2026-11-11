@@ -17,6 +17,9 @@ on:
       - '*.js'
       - '.github/workflows/**'
       - '*.qmd'
+      # a change to the shared math macros changes every rendered equation
+      - 'latex-macros'
+      - '.gitmodules'
 
 concurrency: preview-${{ github.ref }}
 
