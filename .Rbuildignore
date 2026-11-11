@@ -3,3 +3,5 @@
 ^dependency-graph\.js$
 ^dependency-graph\.json$
 ^tools$
+^latex-macros$
+^\.gitmodules$
