@@ -1,50 +1,36 @@
+# Renders the site and deploys it to the gh-pages branch, keeping the
+# pr-preview/ subtree.
+#
+# Do NOT name a `concurrency:` group `gh-pages` in this caller (deadlock,
+# https://github.com/Morrison-Lab/gha/issues/809).
+name: Quarto Publish
+
 on:
   workflow_dispatch:
   push:
     branches: main
 
-name: Quarto Publish
+concurrency:
+  group: quarto-publish-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+  publish:
     permissions:
       contents: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@HEAD
-        with:
-          # fetch the latex-macros submodule: the lab's shared math macros
-          submodules: true
-
-      - name: list files
-        shell: bash
-        run: |
-          ls
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@HEAD
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tinytex: true
-
-      - uses: r-lib/actions/setup-r@HEAD
-        with:
-          use-public-rspm: true
-
-      - uses: r-lib/actions/setup-r-dependencies@HEAD
-        with:
-          needs: |
-            connect
-            website
-          extra-packages: |
-            local::.
-            any::pkgdown
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@HEAD
-        with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    uses: Morrison-Lab/gha/.github/workflows/quarto-publish.yml@v3
+    with:
+      render-profile: website
+      # The math macros come from the latex-macros submodule.
+      checkout-submodules: true
+      setup-r: true
+      use-renv: false
+      r-packages: |
+        any::knitr
+        any::rmarkdown
+        any::qte
+        any::downlit
+        any::xml2
+      tinytex: true
+      freeze-cache: true
+      timeout-minutes: 60
