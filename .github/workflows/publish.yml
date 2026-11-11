@@ -14,7 +14,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@HEAD
         with:
-          # latex-macros holds the shared math macros that the chapters include
+          # fetch the latex-macros submodule: the lab's shared math macros
           submodules: true
 
       - name: list files
