@@ -11,7 +11,7 @@ corresponding to an action that was actually taken.
 If we consider taking action $a$
 or an alternative $a'$,
 and we actually take action $A=a$,
-then $\po{Y}{a}$ is the factual outcome.
+then $Y(a)$ is the factual outcome.
 :::
 
 ---

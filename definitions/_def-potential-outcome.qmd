@@ -8,7 +8,7 @@ is the value of a random variable $Y$
 that would occur if we were to take action $a$.
 The potential outcome of action $a$ on random variable $Y$ 
 is often denoted $Y(a)$, $Y^a$, or $Y^{A=a}$.
-We will use notation $\po{Y}{a}$.
+We will use notation $Y(a)$.
 :::
 
 
