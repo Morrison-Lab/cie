@@ -12,8 +12,10 @@ on:
       - 'pkgdown/**'
       - 'vignettes/**'
       - '_quarto.yml'
-      - '.github/workflows/preview.yml'
-      - '.github/workflows/publish.yml'
+      - '_quarto-*.yml'
+      - 'tools/**'
+      - '*.js'
+      - '.github/workflows/**'
       - '*.qmd'
 
 concurrency: preview-${{ github.ref }}

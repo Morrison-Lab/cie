@@ -1,0 +1,90 @@
+# Automatic Claude Code review of pull requests -- thin caller.
+#
+# The reusable workflow in Morrison-Lab/gha runs the `code-review` plugin,
+# posts inline findings, ends every review with an explicit `### Verdict`
+# line, and already skips drafts, Dependabot bumps and fork PRs. A PR that
+# edits this workflow file is reviewed against the default branch's copy of
+# the workflow YAML (gha#598). This caller only supplies cie's Quarto/R
+# review guidance on top.
+# See https://github.com/Morrison-Lab/gha for inputs and versioning.
+#
+# Secrets are passed explicitly rather than via `secrets: inherit`: GitHub
+# only inherits secrets into a reusable workflow owned by the same org/user,
+# and Morrison-Lab/gha is a different owner than this repo.
+
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, reopened]
+  # Allow a fresh review to be dispatched explicitly, since GITHUB_TOKEN
+  # pushes don't fire `synchronize`.
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull request number to review'
+        required: true
+        type: string
+
+# NOTE: no top-level `concurrency:` block here. The reusable workflow's own
+# `claude-review` job already declares `concurrency: group:
+# claude-review-<pr-number>, cancel-in-progress: true` internally -- a
+# caller-level block with the same group name deadlocks the run
+# (gha#437), so the per-PR dedup is already handled inside the called workflow.
+
+jobs:
+  review:
+    permissions:
+      contents: read
+      pull-requests: write  # post review + inline comments
+      issues: write
+      id-token: write        # required by claude-code-action for the App-token exchange
+      actions: read          # lets the reviewer read CI status
+      checks: read           # required by gha v3's reviewer job (gha#833); without it the call fails at startup
+    uses: Morrison-Lab/gha/.github/workflows/claude-code-review.yml@v3
+    secrets:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}   # Max-plan OAuth; empty when using API key
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}               # direct API key; empty when using OAuth
+      SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}   # optional; only for private submodules
+    with:
+      pr-number: ${{ inputs.pr_number }}
+      # `claude` is included because a remote Claude session pushing a
+      # commit directly to a PR fires `synchronize` with `claude` as the
+      # actor, and a dispatched review's actor is `github-actions[bot]`
+      # (the default) -- without both, the action rejects the run as a
+      # "non-human actor".
+      allowed-bots: 'github-actions[bot],claude'
+      prompt-addendum: |
+        In addition to the standard checks above, this is a small,
+        prose-heavy Quarto project, so also prioritize:
+
+        1. **Quarto / prose correctness**
+           - `.qmd` syntax: chunk options use `#|` directives, fenced
+             blocks are balanced, cross-refs (`@fig-`, `@tbl-`, `@sec-`)
+             resolve to defined labels.
+           - Bullet-list rule: 3+ items use bullets with a blank line above.
+
+        2. **R code**
+           - Conforms to `.lintr.R` settings (snake_case, line length, etc.).
+
+        3. **Build hygiene**
+           - No accidental commits of `_site/`, `_freeze/`, or `.quarto/`.
+           - `README.md` is generated; edits should go to `README.Rmd`.
+           - Bibliography entries are well-formed BibTeX.
+
+        When you post findings, end the top-level summary with a
+        ready-to-paste draft of the PR comment the author would send to
+        kick off another `@claude` run on those findings. Wrap the draft in
+        a fenced code block (GitHub renders a copy button on code blocks,
+        so one click puts it on the clipboard) and embed a markdown link
+        back to your review summary so the next `@claude` run can find it.
+        The draft should read like:
+
+            ```
+            @claude address review comments in [this review](https://github.com/${{ github.repository }}/pull/${{ inputs.pr_number || github.event.pull_request.number }})
+            ```
+
+        Use the PR conversation URL above as the link target (you won't
+        know your own summary comment's anchor before posting it, and the
+        PR conversation is where the latest review lands anyway). Omit this
+        draft when the PR is clean (nothing to fix).
