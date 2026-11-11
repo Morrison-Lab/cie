@@ -1,0 +1,20 @@
+section,subgroup,kind,title,url,description,extra_label,extra_urls,citekey
+UC Davis courses,,course,EPI 205: Principles of Epidemiology,https://catalog.ucdavis.edu/search/?q=EPI+205,,,,
+UC Davis courses,,course,EPI 206: Epidemiologic Study Design,https://catalog.ucdavis.edu/search/?q=EPI+206,,,,
+UC Davis courses,,course,EPI/SPH 207: Advanced Epidemiologic Methodology,https://catalog.ucdavis.edu/search/?q=EPI+207,,,,
+UC Davis courses,,course,EPI 225: Advanced Topics in Epidemiology Methods,https://catalog.ucdavis.edu/search/?q=EPI+225,,,,
+UC Davis courses,,course,POL 285: Statistics of Causal Inference in Political Science,https://catalog.ucdavis.edu/search/?q=POL+285,,,,
+UC Davis courses,,course,MGB/MGP/MGT 454A: Causal Inference and Statistical Experiments,https://catalog.ucdavis.edu/search/?q=MGB+454A,,syllabus,https://webapps.aws.ucdavis.edu/public/documents/4861649/Syllabus https://schedule.aws.ucdavis.edu/public/documents/5319910/Syllabus,
+UC Davis courses,,course,PSC 204B: Causal Modeling of Correlational Data,https://catalog.ucdavis.edu/search/?q=PSC+204B,,,,
+UC Davis courses,,course,PSC 205C: Structural Equation Modeling,https://catalog.ucdavis.edu/search/?q=PSC+205C,,,,
+UC Davis courses,Course search options,course search,,https://schedule.aws.ucdavis.edu/courseScheduling,,,,
+UC Davis courses,Course search options,course search,,https://catalog.ucdavis.edu/course-search/,,,,
+UC Davis courses,Course search options,course search,,https://catalog.ucdavis.edu/courses-subject-code/,,,,
+Online Videos,,video,Introduction to Causal Inference,https://ucdhs.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=43e9eb6f-3ed9-41ac-8ad9-ae22016572c8,,slides,https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/causal-inference-intro-2022.pdf,
+Online Videos,,video,Online Causal Inference Seminar series,https://www.youtube.com/channel/UCiiOj5GSES6uw21kfXnxj3A/videos,,,,
+UC Davis Datalab learning group,,reading group,,https://datalab.ucdavis.edu/causal-inference/,,reading list,https://docs.google.com/document/d/1K0QZFSjQIYnOTahpRK7Q83eaiIIFjfa-clSbj_ifgco/edit?tab=t.0#heading=h.farbmh6n76gq,
+UC Davis Datalab learning group,Other links,website,,https://cameron.econ.ucdavis.edu/causal/,,,,
+UC Davis Datalab learning group,Other links,reading group,,https://datalab-icmat.github.io/causal_reading_group.html,,,,
+UC Davis Datalab learning group,Other links,course,Lab exercises by Ben Noble,https://github.com/bennoble/causal-inference-2022,,author's site,https://benjaminnoble.org/,
+Books,,book,,,,,,pearlprimer
+Books,,book,,,,,,hernan2020causal
