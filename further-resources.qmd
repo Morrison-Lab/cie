@@ -1,6 +1,16 @@
-{{< include latex-macros/macros.qmd >}}
+---
+title: "Further resources"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: further-resources-slides.html
+  pdf:
+    output-file: further-resources-handout.pdf
+---
 
-# Further resources
+{{< include latex-macros/macros.qmd >}}
 
 ## The Catalog of Bias
 

@@ -1,6 +1,16 @@
-{{< include latex-macros/macros.qmd >}}
+---
+title: "Introduction to causal inference"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: intro-causal-slides.html
+  pdf:
+    output-file: intro-causal-handout.pdf
+---
 
-# Introduction to causal inference
+{{< include latex-macros/macros.qmd >}}
 
 ## Introduction
 
