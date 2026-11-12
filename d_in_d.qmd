@@ -1,10 +1,20 @@
+---
+title: "Difference in differences analyses"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: d_in_d-slides.html
+  pdf:
+    output-file: d_in_d-handout.pdf
+---
+
 {{< include latex-macros/macros.qmd >}}
 
-# Difference in differences analyses
-
 Many approaches to causal inference assume
-exchangeability (@def-cond-exch)
-and exploit its consequence (@thm-exch):
+[exchangeability](intro-causal.qmd#def-cond-exch)
+and exploit [its consequence](intro-causal.qmd#thm-exch):
 
 $$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$
 

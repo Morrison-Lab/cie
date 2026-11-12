@@ -1,6 +1,16 @@
-{{< include latex-macros/macros.qmd >}}
+---
+title: "Collider bias"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: collider-bias-slides.html
+  pdf:
+    output-file: collider-bias-handout.pdf
+---
 
-# Collider bias
+{{< include latex-macros/macros.qmd >}}
 
 ## Definition
 
