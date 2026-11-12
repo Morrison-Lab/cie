@@ -1,20 +1,31 @@
-{{< include macros.qmd >}}
+---
+title: "Philosophy of causality"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: philosophy-of-causality-slides.html
+  pdf:
+    output-file: philosophy-of-causality-handout.pdf
+---
 
-# Philosophy of causality {#sec-philosophy-causality}
+{{< include latex-macros/macros.qmd >}}
 
 ::: {.callout-note}
 ## Optional reading
 
 This chapter is background.
 Nothing later in the book depends on it.
-It explains where the potential-outcomes definitions in @sec-intro-causal come from,
+It explains where the potential-outcomes definitions in
+[the introduction](intro-causal.qmd) come from,
 and why they carry the assumptions they do.
 :::
 
 ## Why look at philosophy at all?
 
 The book defines a cause in terms of potential outcomes
-(@def-cause).
+([the definition of a cause](intro-causal.qmd#def-cause)).
 That definition is one answer among several
 to a question philosophers have argued over for centuries:
 what does it mean to say that one thing causes another?
@@ -64,7 +75,7 @@ with the closest possible worlds in which $A$ does not occur
 
 {{< include definitions/_exm-counterfactual-account.qmd >}}
 
-This account is the closest to @def-cause.
+This account is the closest to [the definition of a cause](intro-causal.qmd#def-cause).
 A potential outcome $Y(a')$ for an action $a'$ that did not occur
 is a counterfactual outcome,
 so the potential-outcomes framework makes counterfactual dependence
@@ -80,7 +91,7 @@ removing either one leaves the effect in place,
 so neither counts as a cause.
 The potential-outcomes framework avoids the first difficulty
 by defining the counterfactual in terms of a specific action
-(@def-action, @sec-manipulability),
+([actions](intro-causal.qmd#def-action), @sec-manipulability),
 and mostly sidesteps the second
 by asking about the effect of one well-specified action at a time.
 
@@ -95,7 +106,7 @@ Holland summarized this view as "no causation without manipulation"
 {{< include definitions/_exm-manipulability.qmd >}}
 
 This account is the one that the book's definitions
-(@def-action and @def-cause) take on:
+([actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause)) take on:
 a cause is an *action*,
 and the effect is a contrast between outcomes under different actions.
 
@@ -114,7 +125,7 @@ Its main difficulty is the one every observational study faces.
 Probability raising can come from confounding,
 so "after other relevant factors are held fixed" does the heavy lifting,
 and the view does not say which factors those are.
-The chapter on bias analyses (@sec-bias-analyses)
+[The chapter on bias analyses](bias-analyses.qmd)
 discusses how to handle that question in practice.
 
 ### Mechanisms {#sec-mechanisms}
@@ -139,8 +150,8 @@ without describing how the action works.
 | Account | Core idea | Relation to this book |
 |---|---|---|
 | Regularity | Events of type $A$ are followed by events of type $B$ | Motivates asking whether an association is causal; too strict for stochastic outcomes |
-| Counterfactual | $B$ would not have occurred without $A$ | Basis of potential outcomes (@def-potential-outcome, @def-counterfactual) |
-| Manipulability | A cause is something one could change | Basis of the action-based definitions (@def-action, @def-cause) |
+| Counterfactual | $B$ would not have occurred without $A$ | Basis of [potential outcomes](intro-causal.qmd#def-potential-outcome) and [counterfactual outcomes](intro-causal.qmd#def-counterfactual) |
+| Manipulability | A cause is something one could change | Basis of the definitions of [actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause) |
 | Probabilistic | Causes raise probabilities | Matches estimands defined on risks and means |
 | Mechanistic | Causes work through mechanisms | Not needed for definitions; useful as supporting evidence |
 
@@ -149,7 +160,7 @@ without describing how the action works.
 Two assumptions in the book
 come straight from the counterfactual and manipulability accounts:
 
-- **Consistency** (@def-consistency)
+- **Consistency** ([definition](intro-causal.qmd#def-consistency))
   says that the outcome we observe under action $a$
   equals the potential outcome $Y(a)$.
   That statement is only meaningful

@@ -1,0 +1,203 @@
+project:
+  type: website
+  pre-render:
+    # First, because it fetches the custom-callout extension that the filters below need.
+    - python3 tools/install-extensions.py
+    # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
+    - python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
+  resources:
+    - dependency-graph.js
+    - dependency-graph.json
+  output-dir: _site
+  # Explicit, so drafts at the root (intro.qmd, dnd.qmd, adnd.qmd) and the
+  # latex-macros submodule's own pages are not rendered.
+  render:
+    - index.qmd
+    - intro-causal.qmd
+    - philosophy-of-causality.qmd
+    - collider-bias.qmd
+    - bias-analyses.qmd
+    - d_in_d.qmd
+    - further-resources.qmd
+    - references.qmd
+
+website:
+  title: "Causal Inference in Epidemiology"
+  site-url: https://morrison-lab.github.io/cie/
+  page-footer:
+    left:
+      - text: "Copyright 2024-2026, Douglas Ezra Morrison"
+  # google-analytics: "G-VS314RJ2KP"
+  reader-mode: true
+  repo-url: https://github.com/Morrison-Lab/cie
+  repo-actions: [edit, issue, source]
+  back-to-top-navigation: true
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Chapters"
+        menu:
+          - text: "Introduction to causal inference"
+            href: intro-causal.qmd
+          - text: "Philosophy of causality"
+            href: philosophy-of-causality.qmd
+          - text: "Collider bias"
+            href: collider-bias.qmd
+          - text: "Bias analyses"
+            href: bias-analyses.qmd
+          - text: "Difference in differences analyses"
+            href: d_in_d.qmd
+          - text: "Further resources"
+            href: further-resources.qmd
+      - text: "References"
+        href: references.qmd
+  sidebar:
+    style: docked
+    contents:
+      - index.qmd
+      - intro-causal.qmd
+      - philosophy-of-causality.qmd
+      - collider-bias.qmd
+      - bias-analyses.qmd
+      - d_in_d.qmd
+      - further-resources.qmd
+      - references.qmd
+
+author:
+  - name: "Douglas Ezra Morrison"
+    url: https://demorrison.ucdavis.edu/
+    affiliation: Department of Public Health Sciences, School of Medicine, University of California, Davis
+
+# Every page renders as a web page. A chapter also renders as a slide deck and
+# a PDF handout: its front matter lists those formats and names each output
+# file. The options below are shared by every page that renders the format.
+format:
+  html:
+    filters:
+      - Morrison-Lab/callouty-theorem
+      # By path, not extension name: Quarto looks extensions up before a
+      # `pre-render` script runs, so the copy that tools/install-extensions.py
+      # fetches would not be found by name.
+      - _extensions/coatless-quarto/custom-callout/customcallout.lua
+      - _extensions/coatless-quarto/custom-callout/fa.lua
+    include-after-body:
+      - text: '<script src="dependency-graph.js" defer></script>'
+    lightbox: true
+    link-external-icon: true
+    embed-resources: false
+    shift-heading-level-by: 0
+    subject: "Causal Inference in Epidemiology"
+    date: last-modified
+    date-format: "[Last modified:] YYYY-MM-DD: H:mm:ss (A)"
+    theme:
+       light: cosmo
+       dark: darkly
+    code-tools: true
+    df-print: paged
+    code-fold: true
+    code-link: true
+    fig-cap-location: top
+    html-math-method: mathjax
+    number-sections: true
+    number-depth: 3
+    toc-depth: 3
+    code-summary: "Show R code"
+    css: custom.scss
+
+# Theorem-type, exercise and solution divs render as colored callouts, as in
+# lds and Morrison-Lab/rme (#49): `callouty-theorem` wraps each `#def-`,
+# `#thm-`, `#exm-`, `#exr-`, `#sol-` ... div in a callout, and
+# `custom-callout` gives each type its color.
+# These two blocks follow lds's `_quarto-website.yml`.
+# The PDF handouts keep Quarto's own theorem headings.
+callouty-theorem:
+  thm:
+    callout:
+      type: lem
+  lem:
+    callout:
+      type: lem
+  cor:
+    callout:
+      type: cor
+  prp:
+    callout:
+      type: prp
+  cnj:
+    callout:
+      type: cnj
+  def:
+    callout:
+      type: def
+  exm:
+    callout:
+      type: exm
+      icon: false
+  exr:
+    callout:
+      type: exr
+  proof:
+    override-title: true
+    callout:
+      type: proof
+      appearance: default
+      collapse: true
+      icon: true
+  solution:
+    override-title: true
+    callout:
+      type: solution
+      appearance: default
+      collapse: true
+      icon: false
+  remark:
+    callout:
+      type: remark
+
+# The colors `custom-callout` gives each type. No reds; thm shares lem's blue.
+custom-callout:
+  lem:
+    color: "#1565C0"  # royal blue (also used for thm)
+  cor:
+    color: "#00838F"  # dark cyan
+  prp:
+    color: "#827717"  # dark olive
+  cnj:
+    color: "#558B2F"  # grass green
+  def:
+    color: "#1B5E20"  # forest green
+  exm:
+    color: "#6A1B9A"  # deep purple
+  exr:
+    color: "#FFA500"  # orange
+  proof:
+    color: "#37474F"  # blue-grey slate
+  solution:
+    color: "#4E342E"  # dark cocoa
+  remark:
+    color: "#AD1457"  # dark magenta
+
+comments:
+  hypothesis:
+    theme: clean
+    openSidebar: false
+    enableExperimentalNewNoteButton: true
+
+execute:
+  warning: false
+  message: false
+  cache: false
+  freeze: auto  # re-render only when source changes
+
+editor:
+  mode: source
+
+knitr:
+  opts_chunk:
+    collapse: true
+    # df_print: paged
+    comment: "#>"
+    R.options:
+      knitr.graphics.auto_pdf: true

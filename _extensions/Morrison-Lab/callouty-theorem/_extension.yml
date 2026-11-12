@@ -1,0 +1,8 @@
+title: callouty-theorem
+author: sun123zxy
+version: 1.7.0
+quarto-required: ">=1.6.0"
+contributes:
+  filters:
+    - def-list.lua
+    - callouty-theorem.lua

@@ -1,0 +1,41 @@
+# Shared by every chapter through `metadata-files:` in its front matter.
+# A chapter renders three ways: a web page, a slide deck and a PDF handout.
+# The chapter's own front matter names the deck and handout files.
+format:
+  html: default
+  revealjs:
+    # The same colored boxes as the web page, so a definition visibly ends
+    # before the commentary that follows it.
+    filters:
+      - Morrison-Lab/callouty-theorem
+      - _extensions/coatless-quarto/custom-callout/customcallout.lua
+      - _extensions/coatless-quarto/custom-callout/fa.lua
+    theme: simple
+    embed-resources: false
+    lightbox: true
+    fig-cap-location: top
+    html-math-method: mathjax
+    smaller: true
+    scrollable: true
+    slide-number: true
+    progress: true
+    slide-level: 2
+    number-sections: true
+    number-depth: 2
+    code-fold: true
+    code-summary: "[R code]"
+    df-print: paged
+  pdf:
+    documentclass: scrartcl
+    geometry:
+      - top=15mm
+      - bottom=20mm
+    toc: true
+    toc-title: Contents
+    toc-depth: 2
+    fig-pos: "H"
+    df-print: tibble
+    links-as-notes: true
+    colorlinks: true
+    number-sections: true
+    number-depth: 3

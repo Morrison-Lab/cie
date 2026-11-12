@@ -10,6 +10,6 @@ quitting prevented the cancer
 only if the patient would have developed lung cancer
 had they kept smoking.
 We never observe that second scenario.
-It is the counterfactual outcome of @def-counterfactual.
+It is the [counterfactual outcome](intro-causal.qmd#def-counterfactual).
 
 :::

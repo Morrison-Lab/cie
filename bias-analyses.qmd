@@ -1,5 +1,15 @@
-{{< include macros.qmd >}}
+---
+title: "Bias analyses"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: bias-analyses-slides.html
+  pdf:
+    output-file: bias-analyses-handout.pdf
+---
 
-# Bias analyses {#sec-bias-analyses}
+{{< include latex-macros/macros.qmd >}}
 
 {{< include _sec-bias-analyses.qmd >}}
