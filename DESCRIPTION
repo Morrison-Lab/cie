@@ -1,10 +1,12 @@
 Package: cie
-Title: What the Package Does (One Line, Title Case)
+Title: Causal Inference in Epidemiology
 Version: 0.0.0.9000
 Authors@R: 
     person("Douglas Ezra", "Morrison", , "demorrison@ucdavis.edu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7195-830X", Twitter = "@demstats1"))
-Description: What the package does (one paragraph).
+Description: Lecture notes on causal inference in epidemiology, written as a
+    Quarto book. This file lists the R packages the notes need to render; it
+    is a dependency manifest, not a package to install for its own functions.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
