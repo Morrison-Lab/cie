@@ -1,0 +1,23 @@
+{
+  "extraKnownMarketplaces": {
+    "Morrison-Lab": {
+      "source": {
+        "source": "github",
+        "repo": "Morrison-Lab/ai-config"
+      }
+    }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/render-toolchain.sh",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
