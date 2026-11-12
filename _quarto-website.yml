@@ -1,7 +1,10 @@
 project:
   type: website
-  # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
-  pre-render: python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
+  pre-render:
+    # First, because it fetches the custom-callout extension that the filters below need.
+    - python3 tools/install-extensions.py
+    # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
+    - python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
   resources:
     - dependency-graph.js
     - dependency-graph.json
@@ -68,6 +71,13 @@ author:
 # file. The options below are shared by every page that renders the format.
 format:
   html:
+    filters:
+      - Morrison-Lab/callouty-theorem
+      # By path, not extension name: Quarto looks extensions up before a
+      # `pre-render` script runs, so the copy that tools/install-extensions.py
+      # fetches would not be found by name.
+      - _extensions/coatless-quarto/custom-callout/customcallout.lua
+      - _extensions/coatless-quarto/custom-callout/fa.lua
     include-after-body:
       - text: '<script src="dependency-graph.js" defer></script>'
     lightbox: true
@@ -91,6 +101,79 @@ format:
     toc-depth: 3
     code-summary: "Show R code"
     css: custom.scss
+
+# Theorem-type, exercise and solution divs render as colored callouts, as in
+# lds and Morrison-Lab/rme (#49): `callouty-theorem` wraps each `#def-`,
+# `#thm-`, `#exm-`, `#exr-`, `#sol-` ... div in a callout, and
+# `custom-callout` gives each type its color.
+# These two blocks follow lds's `_quarto-website.yml`.
+# The PDF handouts keep Quarto's own theorem headings.
+callouty-theorem:
+  thm:
+    callout:
+      type: lem
+  lem:
+    callout:
+      type: lem
+  cor:
+    callout:
+      type: cor
+  prp:
+    callout:
+      type: prp
+  cnj:
+    callout:
+      type: cnj
+  def:
+    callout:
+      type: def
+  exm:
+    callout:
+      type: exm
+      icon: false
+  exr:
+    callout:
+      type: exr
+  proof:
+    override-title: true
+    callout:
+      type: proof
+      appearance: default
+      collapse: true
+      icon: true
+  solution:
+    override-title: true
+    callout:
+      type: solution
+      appearance: default
+      collapse: true
+      icon: false
+  remark:
+    callout:
+      type: remark
+
+# The colors `custom-callout` gives each type. No reds; thm shares lem's blue.
+custom-callout:
+  lem:
+    color: "#1565C0"  # royal blue (also used for thm)
+  cor:
+    color: "#00838F"  # dark cyan
+  prp:
+    color: "#827717"  # dark olive
+  cnj:
+    color: "#558B2F"  # grass green
+  def:
+    color: "#1B5E20"  # forest green
+  exm:
+    color: "#6A1B9A"  # deep purple
+  exr:
+    color: "#FFA500"  # orange
+  proof:
+    color: "#37474F"  # blue-grey slate
+  solution:
+    color: "#4E342E"  # dark cocoa
+  remark:
+    color: "#AD1457"  # dark magenta
 
 comments:
   hypothesis:

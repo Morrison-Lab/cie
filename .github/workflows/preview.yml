@@ -1,72 +1,42 @@
-name: Quarto Preview
+# Build half of the PR preview: renders the site in the pull request's own
+# context (which may be a fork) and uploads it, with the PR's metadata, as an
+# artifact. The deploy half (preview-deploy.yml) publishes it to gh-pages.
+# This job is read-only (contents: read): it must never write to the base repo.
+#
+# Keep this workflow's `name:` in sync with the `workflows:` list in
+# preview-deploy.yml: that is how the deploy half finds this run.
+#
+# Do NOT name a `concurrency:` group `gh-pages` in this caller (deadlock,
+# https://github.com/Morrison-Lab/gha/issues/809).
+name: Quarto Preview Build
 
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
-    paths:
-      - 'man/**'
-      - 'pkgdown/**'
-      - 'vignettes/**'
-      - '_quarto.yml'
-      - '_quarto-*.yml'
-      - 'tools/**'
-      - '*.js'
-      - '.github/workflows/**'
-      - '*.qmd'
-      # a change to the shared math macros changes every rendered equation
-      - 'latex-macros'
-      - '.gitmodules'
+    types: [opened, reopened, synchronize, labeled, unlabeled, closed]
 
-concurrency: preview-${{ github.ref }}
+permissions:
+  contents: read
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
+  build:
     permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-        with:
-          # fetch the latex-macros submodule: the lab's shared math macros
-          submodules: true
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          tinytex: true
-
-      - uses: r-lib/actions/setup-r@HEAD
-        with:
-          use-public-rspm: true
-
-      - uses: r-lib/actions/setup-r-dependencies@HEAD
-        with:
-          needs: |
-            connect
-            website
-          extra-packages: |
-            local::.
-            any::pkgdown
-
-      - name: Render
-        if: github.event.action != 'closed' # skip the build if the PR has been closed
-        uses: quarto-dev/quarto-actions/render@v2
-
-      - name: list files
-        shell: bash
-        run: |
-          echo "contents of _site:\n"
-          ls _site/
-          echo "contents of .:\n"
-          ls .
-      - name: Deploy PR Preview
-        uses: rossjrw/pr-preview-action@main
-        with:
-          source-dir: _site/
-
+      contents: read
+    uses: Morrison-Lab/gha/.github/workflows/preview.yml@v3
+    with:
+      render-profile: website
+      # Web pages, slide decks and PDF handouts, as each chapter's front matter lists.
+      formats: default
+      # The math macros come from the latex-macros submodule.
+      submodules: 'recursive'
+      use-renv: false
+      install-package: false
+      r-packages: |
+        any::knitr
+        any::rmarkdown
+        any::qte
+        any::downlit
+        any::xml2
+      tinytex: true
+      setup-chrome: false
+      apt-packages: ''
+      timeout-minutes: 60
