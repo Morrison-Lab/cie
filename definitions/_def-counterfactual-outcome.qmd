@@ -11,7 +11,7 @@ corresponding to an action that was actually taken.
 If we consider taking action $a$
 or an alternative $a'$,
 and we actually take action $A=a$,
-then $Y(a)$ is the factual outcome.
+then $\potout{a}$ is the factual outcome.
 :::
 
 ---
@@ -29,7 +29,7 @@ corresponding to an action that was not actually taken.
 If we consider taking action $a$
 or an alternative $a'$,
 and we actually take action $A=a$,
-then $Y(a')$ is a counterfactual outcome.
+then $\potout{a'}$ is a counterfactual outcome.
 
 There might be more than one counterfactual outcome,
 depending on how many action options were considered,

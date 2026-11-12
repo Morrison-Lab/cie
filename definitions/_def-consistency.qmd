@@ -5,6 +5,6 @@
 Consistency is the assumption that if we observe an action $a$,
 then the observed outcome $Y$ is equal to
 the "factual potential outcome" corresponding to action $a$;
-in other words, if $A=a$, then $Y(a) = Y$.
+in other words, if $A=a$, then $\potout{a} = Y$.
 
 :::

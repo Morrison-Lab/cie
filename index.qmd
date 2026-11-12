@@ -1,6 +1,8 @@
-# Preface {.unnumbered}
+---
+title: "Causal Inference in Epidemiology"
+---
 
-This will be an online book about causal inference.
+This website holds notes about causal inference.
 
 Here are some other resources for learning causal inference:
 

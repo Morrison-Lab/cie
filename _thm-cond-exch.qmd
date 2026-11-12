@@ -4,9 +4,9 @@
 
 If subpopulations defined by values of exposure $X$ are 
 conditionally exchangeable with
-respect to potential outcome $Y(x)$ given covariate $\vZ$, then
-the expected value of $Y(x)$ does not depend on the observed value of $X$:
+respect to potential outcome $\potout{x}$ given covariate $\vZ$, then
+the expected value of $\potout{x}$ does not depend on the observed value of $X$:
 
-$$\Expf{Y(x) | X = x', \vZ=\vz} = \Expf{Y(x) | X = x, \vZ=\vz}$$
+$$\Expf{\potout{x} \given X = x', \vZ=\vz} = \Expf{\potout{x} \given X = x, \vZ=\vz}$$
 
 :::
