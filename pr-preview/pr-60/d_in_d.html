@@ -456,7 +456,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-11: 10:08:37 (AM)</p>
+      <p class="date">Last modified: 2026-11-12: 2:31:33 (AM)</p>
     </div>
   </div>
   
@@ -466,9 +466,9 @@ window.Quarto = {
 
 
 </header><p>Many approaches to causal inference assume exchangeability (<a href="intro-causal.html#def-cond-exch" class="quarto-xref">Definition&nbsp;<span>1.10</span></a>) and exploit its consequence (<a href="intro-causal.html#thm-exch" class="quarto-xref">Theorem&nbsp;<span>1.1</span></a>):</p>
-<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y(x) | X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y(x) | X = x\right]\mathclose{}}\]</span></p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x\right]\mathclose{}}\]</span></p>
 <p>Difference-in-differences makes a weaker exchangeability assumption:</p>
-<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) | X = 1\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) | X = 0\right]\mathclose{}}\]</span></p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) \mid X = 1\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) \mid X = 0\right]\mathclose{}}\]</span></p>
 <section id="change-in-changes" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="change-in-changes">
 <span class="header-section-number">4.1</span> Change in Changes</h2>
 <p>The <strong>Change in Changes (CiC)</strong> model <span class="citation" data-cites="atheyimbens2006">(<a href="references.html#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span> is a DiD-type method that estimates the <strong>Quantile Treatment Effect on the Treated (QTET)</strong> — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
@@ -1188,11 +1188,11 @@ Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Q
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>exchangeability (@def-cond-exch)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>and exploit its consequence (@thm-exch):</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>$$\Expf{Y(x) | X = x'} = \Expf{Y(x) | X = x}$$</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Difference-in-differences makes a weaker exchangeability assumption:</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>$$\Expf{Y_t(0) - Y_{t'}(0) | X = 1} = \Expf{Y_t(0) - Y_{t'}(0) | X = 0}$$</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>$$\Expf{Y_t(0) - Y_{t'}(0) \given X = 1} = \Expf{Y_t(0) - Y_{t'}(0) \given X = 0}$$</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change in Changes</span></span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
