@@ -456,7 +456,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-12: 2:31:33 (AM)</p>
+      <p class="date">Last modified: 2026-11-12: 2:42:07 (AM)</p>
     </div>
   </div>
   
@@ -467,8 +467,8 @@ window.Quarto = {
 
 </header><p>Many approaches to causal inference assume exchangeability (<a href="intro-causal.html#def-cond-exch" class="quarto-xref">Definition&nbsp;<span>1.10</span></a>) and exploit its consequence (<a href="intro-causal.html#thm-exch" class="quarto-xref">Theorem&nbsp;<span>1.1</span></a>):</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x\right]\mathclose{}}\]</span></p>
-<p>Difference-in-differences makes a weaker exchangeability assumption:</p>
-<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) \mid X = 1\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_t(0) - Y_{t'}(0) \mid X = 0\right]\mathclose{}}\]</span></p>
+<p>Write <span class="math inline">\(Y_{0,t}\)</span> for the potential outcome at time <span class="math inline">\(t\)</span> without treatment. Difference-in-differences makes a weaker exchangeability assumption:</p>
+<p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{0,t} - Y_{0,t'} \mid X = 1\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{0,t} - Y_{0,t'} \mid X = 0\right]\mathclose{}}\]</span></p>
 <section id="change-in-changes" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="change-in-changes">
 <span class="header-section-number">4.1</span> Change in Changes</h2>
 <p>The <strong>Change in Changes (CiC)</strong> model <span class="citation" data-cites="atheyimbens2006">(<a href="references.html#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span> is a DiD-type method that estimates the <strong>Quantile Treatment Effect on the Treated (QTET)</strong> — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
@@ -1190,64 +1190,65 @@ Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Q
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Difference-in-differences makes a weaker exchangeability assumption:</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>$$\Expf{Y_t(0) - Y_{t'}(0) \given X = 1} = \Expf{Y_t(0) - Y_{t'}(0) \given X = 0}$$</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change in Changes</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>The **Change in Changes (CiC)** model [@atheyimbens2006] is a DiD-type method that estimates the **Quantile Treatment Effect on the Treated (QTET)** — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assumption</span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the *distribution* of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="co">[</span><span class="ot">@atheyimbens2006</span><span class="co">]</span>.</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="fu">### Covariate adjustment</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="co">[</span><span class="ot">@atheyimbens2006; @bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="fu">### R implementation</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>The <span class="in">`CiC()`</span> function in the <span class="in">`qte`</span> R package <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span> implements this estimator. Key arguments are (note: <span class="in">`formla`</span> and <span class="in">`xformla`</span> are the actual argument names in the package):</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Argument  <span class="pp">|</span> Description <span class="pp">|</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------|-------------|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`formla`</span>  <span class="pp">|</span> <span class="in">`y ~ d`</span> where <span class="in">`y`</span> is the outcome and <span class="in">`d`</span> is a binary treatment indicator <span class="pp">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xformla`</span> <span class="pp">|</span> Optional one-sided formula for additional covariates (e.g., <span class="in">`~ age + education`</span>) <span class="pp">|</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`t`</span>       <span class="pp">|</span> Post-treatment time period <span class="pp">|</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tmin1`</span>   <span class="pp">|</span> Pre-treatment time period <span class="pp">|</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tname`</span>   <span class="pp">|</span> Name of the column containing the time variable <span class="pp">|</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`data`</span>    <span class="pp">|</span> Data frame containing all variables <span class="pp">|</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`panel`</span>   <span class="pp">|</span> <span class="in">`TRUE`</span> if the dataset is panel data <span class="pp">|</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`probs`</span>   <span class="pp">|</span> Vector of quantile levels at which to estimate the QTET <span class="pp">|</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`iters`</span>   <span class="pp">|</span> Number of bootstrap iterations for standard errors <span class="pp">|</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>The function returns a <span class="in">`QTE`</span> object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in <span class="in">`probs`</span>.</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example</span></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>The following example from @bcallaway_cic estimates the QTET for the National Supported Work Demonstration job-training program using the <span class="in">`lalonde.psid.panel`</span> dataset, conditioning on several pre-treatment characteristics:</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qte)</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(lalonde)</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">CiC</span>(</span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  re <span class="sc">~</span> treat,</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="dv">1978</span>, <span class="at">tmin1 =</span> <span class="dv">1975</span>, <span class="at">tname =</span> <span class="st">"year"</span>,</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">xformla =</span> <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> education <span class="sc">+</span> black <span class="sc">+</span> hispanic <span class="sc">+</span> married <span class="sc">+</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    nodegree,</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> lalonde.psid.panel, <span class="at">idname =</span> <span class="st">"id"</span>,</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="fl">0.05</span>)</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(c1)</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Write $\potout{0,t}$ for the potential outcome at time $t$ without treatment.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Difference-in-differences makes a weaker exchangeability assumption:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{0,t} - \potout{0,t'} \given X = 1} = \Expf{\potout{0,t} - \potout{0,t'} \given X = 0}$$</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change in Changes</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>The **Change in Changes (CiC)** model [@atheyimbens2006] is a DiD-type method that estimates the **Quantile Treatment Effect on the Treated (QTET)** — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assumption</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the *distribution* of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="co">[</span><span class="ot">@atheyimbens2006</span><span class="co">]</span>.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Covariate adjustment</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="co">[</span><span class="ot">@atheyimbens2006; @bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### R implementation</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>The <span class="in">`CiC()`</span> function in the <span class="in">`qte`</span> R package <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span> implements this estimator. Key arguments are (note: <span class="in">`formla`</span> and <span class="in">`xformla`</span> are the actual argument names in the package):</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Argument  <span class="pp">|</span> Description <span class="pp">|</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------|-------------|</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`formla`</span>  <span class="pp">|</span> <span class="in">`y ~ d`</span> where <span class="in">`y`</span> is the outcome and <span class="in">`d`</span> is a binary treatment indicator <span class="pp">|</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xformla`</span> <span class="pp">|</span> Optional one-sided formula for additional covariates (e.g., <span class="in">`~ age + education`</span>) <span class="pp">|</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`t`</span>       <span class="pp">|</span> Post-treatment time period <span class="pp">|</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tmin1`</span>   <span class="pp">|</span> Pre-treatment time period <span class="pp">|</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tname`</span>   <span class="pp">|</span> Name of the column containing the time variable <span class="pp">|</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`data`</span>    <span class="pp">|</span> Data frame containing all variables <span class="pp">|</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`panel`</span>   <span class="pp">|</span> <span class="in">`TRUE`</span> if the dataset is panel data <span class="pp">|</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`probs`</span>   <span class="pp">|</span> Vector of quantile levels at which to estimate the QTET <span class="pp">|</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`iters`</span>   <span class="pp">|</span> Number of bootstrap iterations for standard errors <span class="pp">|</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>The function returns a <span class="in">`QTE`</span> object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in <span class="in">`probs`</span>.</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>The following example from @bcallaway_cic estimates the QTET for the National Supported Work Demonstration job-training program using the <span class="in">`lalonde.psid.panel`</span> dataset, conditioning on several pre-treatment characteristics:</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qte)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(lalonde)</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">CiC</span>(</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  re <span class="sc">~</span> treat,</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="dv">1978</span>, <span class="at">tmin1 =</span> <span class="dv">1975</span>, <span class="at">tname =</span> <span class="st">"year"</span>,</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">xformla =</span> <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> education <span class="sc">+</span> black <span class="sc">+</span> hispanic <span class="sc">+</span> married <span class="sc">+</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    nodegree,</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> lalonde.psid.panel, <span class="at">idname =</span> <span class="st">"id"</span>,</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="fl">0.05</span>)</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(c1)</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
