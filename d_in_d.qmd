@@ -1,4 +1,4 @@
-{{< include macros.qmd >}}
+{{< include latex-macros/macros.qmd >}}
 
 # Difference in differences analyses
 
@@ -6,11 +6,12 @@ Many approaches to causal inference assume
 exchangeability (@def-cond-exch)
 and exploit its consequence (@thm-exch):
 
-$$\thmExch$$
+$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$
 
+Write $\potout{0,t}$ for the potential outcome at time $t$ without treatment.
 Difference-in-differences makes a weaker exchangeability assumption:
 
-$$\Expf{Y_t(0) - Y_{t'}(0) | X = 1} = \Expf{Y_t(0) - Y_{t'}(0) | X = 0}$$
+$$\Expf{\potout{0,t} - \potout{0,t'} \given X = 1} = \Expf{\potout{0,t} - \potout{0,t'} \given X = 0}$$
 
 ## Change in Changes
 
@@ -55,7 +56,8 @@ data(lalonde)
 c1 <- CiC(
   re ~ treat,
   t = 1978, tmin1 = 1975, tname = "year",
-  xformla = ~ age + I(age^2) + education + black + hispanic + married + nodegree,
+  xformla = ~ age + I(age^2) + education + black + hispanic + married +
+    nodegree,
   data = lalonde.psid.panel, idname = "id",
   se = FALSE, probs = seq(0.05, 0.95, 0.05)
 )
