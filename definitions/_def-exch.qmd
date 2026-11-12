@@ -1,8 +1,10 @@
 :::{#def-exch}
-### Exchangeability
+### Exchangeability (marginal exchangeability)
 
-Subpopulations defined by exposure $X$ are exchangeable
-with respect to a potential outcome $\potout{x}$ 
+Subpopulations defined by exposure $X$ are **exchangeable**
+(also called **marginally exchangeable** [@hernan2020causal, p. 229],
+to set it apart from conditional exchangeability)
+with respect to a potential outcome $\potout{x}$
 if the distribution of $\potout{x}$
 does not depend on the observed exposure $X$:
 
