@@ -18,6 +18,9 @@ format_resource <- function(resource) {
   if (!is.na(resource$title)) {
     link <- paste0("[", resource$title, "](", resource$url, ")")
   }
+  if (!is.na(resource$authors)) {
+    link <- paste0(link, ", by ", resource$authors)
+  }
   blurb <- ""
   if (!is.na(resource$description)) {
     blurb <- paste0(": ", resource$description)
@@ -49,5 +52,6 @@ write_resource_lists <- function(path = "resources.csv") {
   section <- factor(resources$section, levels = unique(resources$section))
   sections <- split(resources, section)
   lines <- lapply(sections, format_section)
-  cat(unlist(lines), sep = "\n")
+  markdown <- paste(unlist(lines), collapse = "\n")
+  knitr::asis_output(enc2utf8(markdown))
 }
