@@ -1,0 +1,26 @@
+# Deploy half of the PR preview: runs when the build workflow finishes,
+# downloads its artifact, and publishes the preview to gh-pages. It runs in the
+# base repository's context, so its token can write; keeping it apart from the
+# read-only build half is the trust boundary.
+#
+# The `workflows:` value below MUST match the `name:` of the build workflow
+# (preview.yml). A `workflow_run` trigger fires only when this file is on the
+# default branch, so previews start working after this merges.
+#
+# Do NOT name a `concurrency:` group `gh-pages` in this caller (deadlock,
+# https://github.com/Morrison-Lab/gha/issues/809). The reusable workflow
+# serializes gh-pages deploys itself.
+name: Quarto Preview Deploy
+
+on:  # zizmor: ignore[dangerous-triggers] -- build and deploy are split on purpose; see header
+  workflow_run:
+    workflows: ["Quarto Preview Build"]
+    types: [completed]
+
+jobs:
+  deploy:
+    permissions:
+      contents: write        # push to gh-pages
+      pull-requests: write   # post the preview-link comment
+      actions: read          # download the build artifact
+    uses: Morrison-Lab/gha/.github/workflows/preview-deploy.yml@v3
