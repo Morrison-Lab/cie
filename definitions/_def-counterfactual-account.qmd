@@ -1,0 +1,11 @@
+:::{#def-counterfactual-account}
+
+#### Counterfactual account of causation
+
+On the **counterfactual account**,
+event $A$ causes event $B$ if
+$A$ and $B$ both occurred,
+and, had $A$ not occurred,
+$B$ would not have occurred.
+
+:::

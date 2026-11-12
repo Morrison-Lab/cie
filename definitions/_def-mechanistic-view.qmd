@@ -1,0 +1,11 @@
+:::{#def-mechanistic-view}
+
+#### Mechanistic view of causation
+
+On the **mechanistic view**,
+$A$ causes $B$ if
+there is a mechanism,
+an organized set of entities and activities,
+that links $A$ to $B$ [@machamer2000thinking].
+
+:::

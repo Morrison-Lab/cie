@@ -1,0 +1,15 @@
+:::{#exm-counterfactual-account}
+<!-- no-figure: conceptual example with no data to plot -->
+
+#### Counterfactual account and smoking cessation
+
+Suppose a patient quit smoking
+and did not develop lung cancer.
+On the counterfactual account,
+quitting prevented the cancer
+only if the patient would have developed lung cancer
+had they kept smoking.
+We never observe that second scenario.
+It is the [counterfactual outcome](intro-causal.qmd#def-counterfactual).
+
+:::

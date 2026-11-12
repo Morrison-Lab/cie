@@ -1,0 +1,10 @@
+:::{#def-probabilistic-view}
+
+#### Probabilistic view of causation
+
+On the **probabilistic view**,
+$A$ causes $B$ if
+$A$ raises the probability of $B$
+after other relevant factors are held fixed [@suppes1970probabilistic].
+
+:::

@@ -1,0 +1,203 @@
+---
+title: "Philosophy of causality"
+metadata-files:
+  - _chapter-formats.yml
+format:
+  html: default
+  revealjs:
+    output-file: philosophy-of-causality-slides.html
+  pdf:
+    output-file: philosophy-of-causality-handout.pdf
+---
+
+{{< include latex-macros/macros.qmd >}}
+
+::: {.callout-note}
+## Optional reading
+
+This chapter is background.
+Nothing later in the book depends on it.
+It explains where the potential-outcomes definitions in
+[the introduction](intro-causal.qmd) come from,
+and why they carry the assumptions they do.
+:::
+
+## Why look at philosophy at all?
+
+The book defines a cause in terms of potential outcomes
+([the definition of a cause](intro-causal.qmd#def-cause)).
+That definition is one answer among several
+to a question philosophers have argued over for centuries:
+what does it mean to say that one thing causes another?
+Seeing the other answers
+makes it easier to see what the potential-outcomes answer includes,
+what it leaves out,
+and why.
+
+Each account below is a family of views,
+and this chapter simplifies all of them.
+The cited sources give the full arguments.
+
+## Five accounts of causation
+
+### Regularity {#sec-regularity}
+
+{{< include definitions/_def-regularity-view.qmd >}}
+
+Hume's discussion of causation is the standard starting point
+[@hume1748enquiry, sec. 7].
+His point is that we never observe a necessary connection
+between cause and effect.
+We observe only that one kind of event reliably follows another.
+
+{{< include definitions/_exm-regularity.qmd >}}
+
+@exm-regularity shows the main weakness:
+strict regularities are rare in epidemiology,
+where outcomes are stochastic
+and have many contributing causes.
+Mackie's refinement treats a cause as
+an insufficient but necessary part of a condition
+that is itself unnecessary but sufficient for the effect
+[@mackie1965causes].
+That version fits "component causes" better.
+
+### Counterfactual dependence {#sec-counterfactual-account}
+
+{{< include definitions/_def-counterfactual-account.qmd >}}
+
+Hume also wrote a second, counterfactual formulation of his definition
+[@hume1748enquiry, sec. 7].
+Lewis later developed it into a full theory
+based on comparing the actual world
+with the closest possible worlds in which $A$ does not occur
+[@lewis1973causation].
+
+{{< include definitions/_exm-counterfactual-account.qmd >}}
+
+This account is the closest to [the definition of a cause](intro-causal.qmd#def-cause).
+A potential outcome $Y(a')$ for an action $a'$ that did not occur
+is a counterfactual outcome,
+so the potential-outcomes framework makes counterfactual dependence
+something a statistical model can describe
+[@holland1986].
+
+The account has two well-known difficulties.
+First, "the closest possible world" is a philosophical notion
+that has no obvious empirical meaning.
+Second, it handles redundant causes badly:
+if two sufficient causes were both present,
+removing either one leaves the effect in place,
+so neither counts as a cause.
+The potential-outcomes framework avoids the first difficulty
+by defining the counterfactual in terms of a specific action
+([actions](intro-causal.qmd#def-action), @sec-manipulability),
+and mostly sidesteps the second
+by asking about the effect of one well-specified action at a time.
+
+### Manipulation and intervention {#sec-manipulability}
+
+{{< include definitions/_def-manipulability.qmd >}}
+
+Here the cause is something that someone could in principle change.
+Holland summarized this view as "no causation without manipulation"
+[@holland1986].
+
+{{< include definitions/_exm-manipulability.qmd >}}
+
+This account is the one that the book's definitions
+([actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause)) take on:
+a cause is an *action*,
+and the effect is a contrast between outcomes under different actions.
+
+### Probabilistic causation {#sec-probabilistic}
+
+{{< include definitions/_def-probabilistic-view.qmd >}}
+
+This view repairs the regularity view for stochastic outcomes.
+It also matches how epidemiologists work:
+a risk factor changes the probability of disease
+and does not determine it.
+
+{{< include definitions/_exm-probabilistic-view.qmd >}}
+
+Its main difficulty is the one every observational study faces.
+Probability raising can come from confounding,
+so "after other relevant factors are held fixed" does the heavy lifting,
+and the view does not say which factors those are.
+[The chapter on bias analyses](bias-analyses.qmd)
+discusses how to handle that question in practice.
+
+### Mechanisms {#sec-mechanisms}
+
+{{< include definitions/_def-mechanistic-view.qmd >}}
+
+{{< include definitions/_exm-mechanistic-view.qmd >}}
+
+Mechanistic evidence,
+such as a known biological pathway,
+often strengthens a causal conclusion
+even when the statistical evidence is limited.
+The potential-outcomes framework does not require a mechanism
+to define an effect.
+It defines the effect of an action on an outcome
+without describing how the action works.
+
+## What the potential-outcomes framework takes from these accounts
+
+@tbl-accounts summarizes how each account relates to this book.
+
+| Account | Core idea | Relation to this book |
+|---|---|---|
+| Regularity | Events of type $A$ are followed by events of type $B$ | Motivates asking whether an association is causal; too strict for stochastic outcomes |
+| Counterfactual | $B$ would not have occurred without $A$ | Basis of [potential outcomes](intro-causal.qmd#def-potential-outcome) and [counterfactual outcomes](intro-causal.qmd#def-counterfactual) |
+| Manipulability | A cause is something one could change | Basis of the definitions of [actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause) |
+| Probabilistic | Causes raise probabilities | Matches estimands defined on risks and means |
+| Mechanistic | Causes work through mechanisms | Not needed for definitions; useful as supporting evidence |
+
+: Philosophical accounts of causation and where they appear in this book. {#tbl-accounts}
+
+Two assumptions in the book
+come straight from the counterfactual and manipulability accounts:
+
+- **Consistency** ([definition](intro-causal.qmd#def-consistency))
+  says that the outcome we observe under action $a$
+  equals the potential outcome $Y(a)$.
+  That statement is only meaningful
+  if "action $a$" names one thing.
+  @hernan2008obesity and @hernan2016water
+  argue this using examples such as obesity and body mass index:
+  different ways of changing the exposure
+  can lead to different outcomes,
+  so a question about "the" effect of the exposure is ambiguous
+  until the intervention is specified.
+  @vanderweele2013versions formalize the point as
+  the problem of multiple versions of treatment.
+- **Well-defined interventions**
+  are the practical form of the manipulability account.
+  If we cannot say what intervention would set $A$ to $a$,
+  we cannot say what $Y(a)$ refers to,
+  and consistency has nothing to hold on to.
+
+{{< include definitions/_exm-interventions.qmd >}}
+
+## Not everyone agrees
+
+The manipulability requirement is contested.
+Some authors hold that causal questions about attributes
+such as race or sex are meaningful without a specified intervention.
+Others reply that
+such questions can only mean something
+once they are tied to an intervention on a related, manipulable variable.
+This book follows the potential-outcomes tradition
+and requires a specified intervention.
+That choice is a design decision for the course,
+and the other accounts above remain legitimate frameworks.
+
+## Further reading
+
+- The original discussion of the regularity and counterfactual formulations is Hume's *Enquiry* [@hume1748enquiry].
+- @lewis1973causation is the standard statement of the counterfactual account.
+- @woodward2003making develops the interventionist (manipulability) account in detail.
+- @holland1986 connects the philosophical discussion to statistical causal inference.
+- @hernan2016water gives an epidemiologist's argument for well-defined interventions.

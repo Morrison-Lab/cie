@@ -1,0 +1,19 @@
+:::{#exm-interventions}
+<!-- no-figure: conceptual example with no data to plot -->
+
+#### A well-defined and an ill-defined question
+
+"What would a patient's blood pressure be
+if they took 10 mg of a particular antihypertensive daily for a year?"
+names a specific intervention,
+so $Y(a)$ is meaningful.
+
+"What would a patient's blood pressure be
+if they had a lower body weight?"
+does not.
+Diet, exercise, surgery, and illness all lower weight,
+and they plausibly affect blood pressure differently.
+We would need to specify a particular intervention
+to define the causal question.
+
+:::
