@@ -1,5 +1,9 @@
 ---
 title: "Causal Inference in Epidemiology"
+# Re-run on every render: the freeze cache tracks this file, not resources.csv,
+# so a frozen result would hide a resource added to the CSV.
+execute:
+  freeze: false
 ---
 
 This website holds notes about causal inference.

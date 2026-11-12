@@ -18,6 +18,9 @@ format_resource <- function(resource) {
   if (!is.na(resource$title)) {
     link <- paste0("[", resource$title, "](", resource$url, ")")
   }
+  if (!is.na(resource$authors)) {
+    link <- paste0(link, ", by ", resource$authors)
+  }
   blurb <- ""
   if (!is.na(resource$description)) {
     blurb <- paste0(": ", resource$description)
@@ -45,7 +48,7 @@ format_section <- function(resources) {
 }
 
 write_resource_lists <- function(path = "resources.csv") {
-  resources <- utils::read.csv(path, na.strings = "", encoding = "UTF-8")
+  resources <- utils::read.csv(path, na.strings = "", fileEncoding = "UTF-8")
   section <- factor(resources$section, levels = unique(resources$section))
   sections <- split(resources, section)
   lines <- lapply(sections, format_section)
