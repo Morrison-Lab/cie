@@ -18,7 +18,6 @@ project:
     - bias-analyses.qmd
     - d_in_d.qmd
     - further-resources.qmd
-    - summary.qmd
     - references.qmd
 
 website:
@@ -49,8 +48,6 @@ website:
             href: d_in_d.qmd
           - text: "Further resources"
             href: further-resources.qmd
-          - text: "Summary"
-            href: summary.qmd
       - text: "References"
         href: references.qmd
   sidebar:
@@ -62,7 +59,6 @@ website:
       - bias-analyses.qmd
       - d_in_d.qmd
       - further-resources.qmd
-      - summary.qmd
       - references.qmd
 
 author:

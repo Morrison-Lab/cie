@@ -2,10 +2,10 @@
 ### Exchangeability
 
 Subpopulations defined by exposure $X$ are exchangeable
-with respect to a potential outcome $Y(x)$ 
-if the distribution of $Y(x)$
+with respect to a potential outcome $\potout{x}$ 
+if the distribution of $\potout{x}$
 does not depend on the observed exposure $X$:
 
-$$Y(x) \ind X$$
+$$\potout{x} \ind X$$
 
 :::
