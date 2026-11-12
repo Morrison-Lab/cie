@@ -24,3 +24,6 @@ _freeze
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Fetched at a pinned commit by tools/install-extensions.py: it publishes no license.
+_extensions/coatless-quarto/custom-callout/

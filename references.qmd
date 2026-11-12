@@ -1,4 +1,9 @@
-# References {.unnumbered}
+---
+title: "References"
+# Every entry in the bibliography: on a website each page lists only what it cites,
+# and this page cites nothing itself.
+nocite: "@*"
+---
 
 ::: {#refs}
 :::

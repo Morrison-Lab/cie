@@ -11,9 +11,9 @@ if:
 
 In other words, if:
 
-- $Y(a) = y$  
+- $\potout{a} = y$  
 **and**  
-- $\exists a' \neq a: Y(a') \neq y$
+- $\exists a' \neq a: \potout{a'} \neq y$
 
 :::
 
