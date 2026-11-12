@@ -12,7 +12,11 @@ format_extra <- function(label, urls) {
 
 format_resource <- function(resource) {
   if (!is.na(resource$citekey)) {
-    return(paste0("- @", resource$citekey))
+    cited <- paste0("- @", resource$citekey)
+    if (!is.na(resource$description)) {
+      cited <- paste0(cited, ": ", resource$description)
+    }
+    return(cited)
   }
   link <- paste0("<", resource$url, ">")
   if (!is.na(resource$title)) {
