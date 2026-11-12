@@ -13,7 +13,6 @@ Here are some other resources for learning causal inference:
 ```{r}
 #| label: resource-lists
 #| echo: false
-#| results: asis
 # One row of resources.csv per resource: add a resource there, not here.
 sys.source("tools/resource_list.R", envir = knitr::knit_global())
 write_resource_lists("resources.csv")

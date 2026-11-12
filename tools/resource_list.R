@@ -48,9 +48,10 @@ format_section <- function(resources) {
 }
 
 write_resource_lists <- function(path = "resources.csv") {
-  resources <- utils::read.csv(path, na.strings = "", fileEncoding = "UTF-8")
+  resources <- utils::read.csv(path, na.strings = "", encoding = "UTF-8")
   section <- factor(resources$section, levels = unique(resources$section))
   sections <- split(resources, section)
   lines <- lapply(sections, format_section)
-  cat(unlist(lines), sep = "\n")
+  markdown <- paste(unlist(lines), collapse = "\n")
+  knitr::asis_output(enc2utf8(markdown))
 }
