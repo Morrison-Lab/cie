@@ -127,7 +127,7 @@
     "href": "index.html",
     "title": "Causal Inference in Epidemiology",
     "section": "",
-    "text": "This website holds notes about causal inference.\nHere are some other resources for learning causal inference:",
+    "text": "This website holds notes about causal inference.\nHere are some other resources for learning causal inference:\n1 UC Davis courses\n\nEPI 205: Principles of Epidemiology\nEPI 206: Epidemiologic Study Design\nEPI/SPH 207: Advanced Epidemiologic Methodology\nEPI 225: Advanced Topics in Epidemiology Methods\nPOL 285: Statistics of Causal Inference in Political Science\n\nMGB/MGP/MGT 454A: Causal Inference and Statistical Experiments\n\nsyllabus: https://webapps.aws.ucdavis.edu/public/documents/4861649/Syllabus, https://schedule.aws.ucdavis.edu/public/documents/5319910/Syllabus\n\n\n\nPSC 204B: Causal Modeling of Correlational Data\nPSC 205C: Structural Equation Modeling\n\nCourse search options:\n\nhttps://schedule.aws.ucdavis.edu/courseScheduling\nhttps://catalog.ucdavis.edu/course-search/\nhttps://catalog.ucdavis.edu/courses-subject-code/\n\n2 Online Videos\n\n\nIntroduction to Causal Inference\n\nslides: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/causal-inference-intro-2022.pdf\n\n\n\nOnline Causal Inference Seminar series\n\n3 UC Davis Datalab learning group\n\n\nhttps://datalab.ucdavis.edu/causal-inference/\n\nreading list: https://docs.google.com/document/d/1K0QZFSjQIYnOTahpRK7Q83eaiIIFjfa-clSbj_ifgco/edit?tab=t.0#heading=h.farbmh6n76gq\n\n\n\n\nOther links:\n\n\nIntroduction to Causal Methods, by A. Colin Cameron: slides with brief examples of randomized trials, instrumental variables, directed acyclic graphs, panel data, difference in differences and regression discontinuity, most with Stata code and data\nhttps://datalab-icmat.github.io/causal_reading_group.html\n\nLab exercises by Ben Noble\n\nauthor’s site: https://benjaminnoble.org/\n\n\n\n\n4 Books\n\nJudea Pearl (2016)\nHernán and Robins (2020)\n\nFree online books:\n\n\nCausal Inference: The Mixtape, by Scott Cunningham: a free online textbook, with its data files and code in a public repository\n\ndata and code: https://github.com/scunning1975/mixtape\n\n\n\n\nCausal Inference in R, by Malcolm Barrett, Lucy D’Agostino McGowan and Travis Gerke: a free online book in the tidyverse style, loosely structured around Hernán and Robins’s What If\n\nsource: https://github.com/r-causal/causal-inference-in-R\n\n\n\n\nStatistical Tools for Causal Inference, by Sylvain Chabé-Ferret: an open source collaborative book that starts from the Rubin causal model\n\nCausal Inference for The Brave and True, by Matheus Facure: a light-hearted but rigorous introduction to impact estimation and sensitivity analysis, in Python\n\nApplied Causal Inference, by Uday Kamath, Kenneth Graham and Mitchell Naylor: from a practical overview of causal inference to applications of causality in machine learning\n\nApplied Causal Analysis (with R), by Paul C. Bauer: the script for a seminar at the University of Mannheim\n\nWhich causal inference book you should read, by Brady Neal: a flowchart for choosing a causal inference book",
     "crumbs": [
       "Home",
       "Causal Inference in Epidemiology"
@@ -137,8 +137,8 @@
     "objectID": "index.html#uc-davis-courses",
     "href": "index.html#uc-davis-courses",
     "title": "Causal Inference in Epidemiology",
-    "section": "1 UC Davis courses",
-    "text": "1 UC Davis courses\n\nEPI 205 “Principles of Epidemiology”\nEPI 206 “Epidemiologic Study Design”\nEPI/SPH 207 “Advanced Epidemiologic Methodology”\nEPI 225 “Advanced Topics in Epidemiology Methods”\nPOL 285 “Statistics of Causal Inference in Political Science”\nMGB/MGP/MGT 454A “Causal Inference and Statistical Experiments”\n\nsyllabus: https://webapps.aws.ucdavis.edu/public/documents/4861649/Syllabushttps://schedule.aws.ucdavis.edu/public/documents/5319910/Syllabus\n\nPSC 204B “Causal Modeling of Correlational Data”\nPSC 205C “Structural Equation Modeling”\n\nCourse search options:\n\nhttps://schedule.aws.ucdavis.edu/courseScheduling\nhttps://catalog.ucdavis.edu/course-search/\nhttps://catalog.ucdavis.edu/courses-subject-code/",
+    "section": "\n1 UC Davis courses",
+    "text": "1 UC Davis courses\n\nEPI 205: Principles of Epidemiology\nEPI 206: Epidemiologic Study Design\nEPI/SPH 207: Advanced Epidemiologic Methodology\nEPI 225: Advanced Topics in Epidemiology Methods\nPOL 285: Statistics of Causal Inference in Political Science\n\nMGB/MGP/MGT 454A: Causal Inference and Statistical Experiments\n\nsyllabus: https://webapps.aws.ucdavis.edu/public/documents/4861649/Syllabus, https://schedule.aws.ucdavis.edu/public/documents/5319910/Syllabus\n\n\n\nPSC 204B: Causal Modeling of Correlational Data\nPSC 205C: Structural Equation Modeling\n\nCourse search options:\n\nhttps://schedule.aws.ucdavis.edu/courseScheduling\nhttps://catalog.ucdavis.edu/course-search/\nhttps://catalog.ucdavis.edu/courses-subject-code/",
     "crumbs": [
       "Home",
       "Causal Inference in Epidemiology"
@@ -148,8 +148,8 @@
     "objectID": "index.html#online-videos",
     "href": "index.html#online-videos",
     "title": "Causal Inference in Epidemiology",
-    "section": "2 Online Videos",
-    "text": "2 Online Videos\n\n“Introduction to Causal Inference” (slides here)\nOnline Causal Inference Seminar series",
+    "section": "\n2 Online Videos",
+    "text": "2 Online Videos\n\n\nIntroduction to Causal Inference\n\nslides: https://health.ucdavis.edu/media-resources/ctsc/documents/pdfs/causal-inference-intro-2022.pdf\n\n\n\nOnline Causal Inference Seminar series",
     "crumbs": [
       "Home",
       "Causal Inference in Epidemiology"
@@ -159,8 +159,8 @@
     "objectID": "index.html#uc-davis-datalab-learning-group",
     "href": "index.html#uc-davis-datalab-learning-group",
     "title": "Causal Inference in Epidemiology",
-    "section": "3 UC Davis Datalab learning group",
-    "text": "3 UC Davis Datalab learning group\n\nhttps://datalab.ucdavis.edu/causal-inference/\n\nReading list\n\n\nOther links:\n\nhttps://cameron.econ.ucdavis.edu/causal/\nhttps://datalab-icmat.github.io/causal_reading_group.html\nLab exercises by Ben Noble: https://github.com/bennoble/causal-inference-2022",
+    "section": "\n3 UC Davis Datalab learning group",
+    "text": "3 UC Davis Datalab learning group\n\n\nhttps://datalab.ucdavis.edu/causal-inference/\n\nreading list: https://docs.google.com/document/d/1K0QZFSjQIYnOTahpRK7Q83eaiIIFjfa-clSbj_ifgco/edit?tab=t.0#heading=h.farbmh6n76gq\n\n\n\n\nOther links:\n\n\nIntroduction to Causal Methods, by A. Colin Cameron: slides with brief examples of randomized trials, instrumental variables, directed acyclic graphs, panel data, difference in differences and regression discontinuity, most with Stata code and data\nhttps://datalab-icmat.github.io/causal_reading_group.html\n\nLab exercises by Ben Noble\n\nauthor’s site: https://benjaminnoble.org/",
     "crumbs": [
       "Home",
       "Causal Inference in Epidemiology"
@@ -170,8 +170,8 @@
     "objectID": "index.html#books",
     "href": "index.html#books",
     "title": "Causal Inference in Epidemiology",
-    "section": "4 Books",
-    "text": "4 Books\n\nJudea Pearl (2016)\nHernán and Robins (2020)",
+    "section": "\n4 Books",
+    "text": "4 Books\n\nJudea Pearl (2016)\nHernán and Robins (2020)\n\nFree online books:\n\n\nCausal Inference: The Mixtape, by Scott Cunningham: a free online textbook, with its data files and code in a public repository\n\ndata and code: https://github.com/scunning1975/mixtape\n\n\n\n\nCausal Inference in R, by Malcolm Barrett, Lucy D’Agostino McGowan and Travis Gerke: a free online book in the tidyverse style, loosely structured around Hernán and Robins’s What If\n\nsource: https://github.com/r-causal/causal-inference-in-R\n\n\n\n\nStatistical Tools for Causal Inference, by Sylvain Chabé-Ferret: an open source collaborative book that starts from the Rubin causal model\n\nCausal Inference for The Brave and True, by Matheus Facure: a light-hearted but rigorous introduction to impact estimation and sensitivity analysis, in Python\n\nApplied Causal Inference, by Uday Kamath, Kenneth Graham and Mitchell Naylor: from a practical overview of causal inference to applications of causality in machine learning\n\nApplied Causal Analysis (with R), by Paul C. Bauer: the script for a seminar at the University of Mannheim\n\nWhich causal inference book you should read, by Brady Neal: a flowchart for choosing a causal inference book",
     "crumbs": [
       "Home",
       "Causal Inference in Epidemiology"
