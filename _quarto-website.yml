@@ -1,0 +1,116 @@
+project:
+  type: website
+  # Writes dependency-graph.json: the prerequisite graph of the definitions and results (#43).
+  pre-render: python3 tools/build_dependency_graph.py --site cie --pages . --out dependency-graph.json
+  resources:
+    - dependency-graph.js
+    - dependency-graph.json
+  output-dir: _site
+  # Explicit, so drafts at the root (intro.qmd, dnd.qmd, adnd.qmd) and the
+  # latex-macros submodule's own pages are not rendered.
+  render:
+    - index.qmd
+    - intro-causal.qmd
+    - collider-bias.qmd
+    - bias-analyses.qmd
+    - d_in_d.qmd
+    - further-resources.qmd
+    - references.qmd
+
+website:
+  title: "Causal Inference in Epidemiology"
+  site-url: https://morrison-lab.github.io/cie/
+  page-footer:
+    left:
+      - text: "Copyright 2024-2026, Douglas Ezra Morrison"
+  # google-analytics: "G-VS314RJ2KP"
+  reader-mode: true
+  repo-url: https://github.com/Morrison-Lab/cie
+  repo-actions: [edit, issue, source]
+  back-to-top-navigation: true
+  page-navigation: true
+  navbar:
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Chapters"
+        menu:
+          - text: "Introduction to causal inference"
+            href: intro-causal.qmd
+          - text: "Collider bias"
+            href: collider-bias.qmd
+          - text: "Bias analyses"
+            href: bias-analyses.qmd
+          - text: "Difference in differences analyses"
+            href: d_in_d.qmd
+          - text: "Further resources"
+            href: further-resources.qmd
+      - text: "References"
+        href: references.qmd
+  sidebar:
+    style: docked
+    contents:
+      - index.qmd
+      - intro-causal.qmd
+      - collider-bias.qmd
+      - bias-analyses.qmd
+      - d_in_d.qmd
+      - further-resources.qmd
+      - references.qmd
+
+author:
+  - name: "Douglas Ezra Morrison"
+    url: https://demorrison.ucdavis.edu/
+    affiliation: Department of Public Health Sciences, School of Medicine, University of California, Davis
+
+# Every page renders as a web page. A chapter also renders as a slide deck and
+# a PDF handout: its front matter lists those formats and names each output
+# file. The options below are shared by every page that renders the format.
+format:
+  html:
+    include-after-body:
+      - text: '<script src="dependency-graph.js" defer></script>'
+    lightbox: true
+    link-external-icon: true
+    embed-resources: false
+    shift-heading-level-by: 0
+    subject: "Causal Inference in Epidemiology"
+    date: last-modified
+    date-format: "[Last modified:] YYYY-MM-DD: H:mm:ss (A)"
+    theme:
+       light: cosmo
+       dark: darkly
+    code-tools: true
+    df-print: paged
+    code-fold: true
+    code-link: true
+    fig-cap-location: top
+    html-math-method: mathjax
+    number-sections: true
+    number-depth: 3
+    toc-depth: 3
+    code-summary: "Show R code"
+    css: custom.scss
+
+comments:
+  hypothesis:
+    theme: clean
+    openSidebar: false
+    enableExperimentalNewNoteButton: true
+
+execute:
+  warning: false
+  message: false
+  cache: false
+  freeze: auto  # re-render only when source changes
+
+editor:
+  mode: source
+
+knitr:
+  opts_chunk:
+    collapse: true
+    # df_print: paged
+    comment: "#>"
+    R.options:
+      knitr.graphics.auto_pdf: true

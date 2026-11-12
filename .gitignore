@@ -8,6 +8,7 @@
 .quarto
 /.quarto/
 _book
+_site
 inst/refs
 *_files/
 *.html
