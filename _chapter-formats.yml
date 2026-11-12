@@ -4,6 +4,12 @@
 format:
   html: default
   revealjs:
+    # The same colored boxes as the web page, so a definition visibly ends
+    # before the commentary that follows it.
+    filters:
+      - Morrison-Lab/callouty-theorem
+      - _extensions/coatless-quarto/custom-callout/customcallout.lua
+      - _extensions/coatless-quarto/custom-callout/fa.lua
     theme: simple
     embed-resources: false
     lightbox: true
