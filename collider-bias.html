@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Douglas Ezra Morrison">
 
-<title>2&nbsp; Collider bias – Causal Inference in Epidemiology</title>
+<title>Collider bias – Causal Inference in Epidemiology</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -104,15 +105,15 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d998fb0a36ef24cb5530bcb19bf4ce4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5fc16af90d58a2426109a2ad05df5ae6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -152,7 +153,7 @@ div.csl-indent {
 <link rel="stylesheet" href="custom.scss">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -326,30 +327,56 @@ div.csl-indent {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./collider-bias.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Causal Inference in Epidemiology</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Morrison-Lab/cie" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Causal-Inference-in-Epidemiology.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Causal Inference in Epidemiology</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-chapters" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Chapters</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-chapters">    
+        <li>
+    <a class="dropdown-item" href="./intro-causal.html">
+ <span class="dropdown-text">Introduction to causal inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./collider-bias.html">
+ <span class="dropdown-text">Collider bias</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bias-analyses.html">
+ <span class="dropdown-text">Bias analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./d_in_d.html">
+ <span class="dropdown-text">Difference in differences analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./further-resources.html">
+ <span class="dropdown-text">Further resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html"> 
+<span class="menu-text">References</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -357,55 +384,60 @@ div.csl-indent {
   </div>
 </a>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./collider-bias.html">Collider bias</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Causal Inference in Epidemiology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-causal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></span></a>
+ <span class="menu-text">Introduction to causal inference</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./collider-bias.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></span></a>
+ <span class="menu-text">Collider bias</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bias-analyses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bias analyses</span></span></a>
+ <span class="menu-text">Bias analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d_in_d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Difference in differences analyses</span></span></a>
+ <span class="menu-text">Difference in differences analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further resources</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Further resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -420,35 +452,39 @@ div.csl-indent {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition"><span class="header-section-number">2.1</span> Definition</a></li>
-  <li><a href="#classic-example-sacketts-hospitalized-patients" id="toc-classic-example-sacketts-hospitalized-patients" class="nav-link" data-scroll-target="#classic-example-sacketts-hospitalized-patients"><span class="header-section-number">2.2</span> Classic example: Sackett’s hospitalized patients</a></li>
-  <li><a href="#modern-example-the-obesity-paradox" id="toc-modern-example-the-obesity-paradox" class="nav-link" data-scroll-target="#modern-example-the-obesity-paradox"><span class="header-section-number">2.3</span> Modern example: The obesity paradox</a></li>
-  <li><a href="#prevention" id="toc-prevention" class="nav-link" data-scroll-target="#prevention"><span class="header-section-number">2.4</span> Prevention</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/collider-bias.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/collider-bias.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="collider-bias-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="collider-bias-handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Collider bias</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://demorrison.ucdavis.edu/">Douglas Ezra Morrison</a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Public Health Sciences, School of Medicine, University of California, Davis
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-12: 7:31:20 (AM)</p>
+      <p class="date">Last modified: 2026-11-12: 7:38:23 (AM)</p>
     </div>
   </div>
   
@@ -460,33 +496,36 @@ div.csl-indent {
 </header>
 
 
-<section id="definition" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">2.1</span> Definition</h2>
-<p>A <strong>collider</strong> is a variable that is caused by two or more other variables in a causal diagram (directed acyclic graph or DAG) <span class="citation" data-cites="catalogofbias_collider">(<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. The term “collider” comes from the visual representation where multiple arrows “collide” into the variable.</p>
+<section id="definition" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="definition"><span class="header-section-number">1</span> Definition</h2>
+<p>A <strong>collider</strong> is a variable that is caused by two or more other variables in a causal diagram (directed acyclic graph or DAG) <span class="citation" data-cites="catalogofbias_collider">(<a href="#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. The term “collider” comes from the visual representation where multiple arrows “collide” into the variable.</p>
 <p>The basic collider structure is an <strong>inverted fork (V-structure)</strong>:</p>
 <pre><code>Exposure → Collider ← Outcome</code></pre>
 <p>More complex patterns exist, such as <strong>M-structures</strong> where multiple colliders are connected in chains, creating additional opportunities for bias when conditioning on any collider in the structure.</p>
-<p>Inappropriately controlling for a collider variable, by study design or statistical analysis, results in <strong>collider bias</strong> <span class="citation" data-cites="catalogofbias_collider">(<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>.</p>
+<p>Inappropriately controlling for a collider variable, by study design or statistical analysis, results in <strong>collider bias</strong> <span class="citation" data-cites="catalogofbias_collider">(<a href="#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>.</p>
 <p>Controlling for a collider can induce a distorted association between the exposure and outcome when in fact none exists. This bias predominantly occurs in observational studies.</p>
-<p>Because collider bias can be induced by sampling (restricting the study to certain values of the collider), selection bias can sometimes be considered to be a form of collider bias <span class="citation" data-cites="catalogofbias_collider">(<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>.</p>
+<p>Because collider bias can be induced by sampling (restricting the study to certain values of the collider), selection bias can sometimes be considered to be a form of collider bias <span class="citation" data-cites="catalogofbias_collider">(<a href="#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>.</p>
 </section>
-<section id="classic-example-sacketts-hospitalized-patients" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="classic-example-sacketts-hospitalized-patients"><span class="header-section-number">2.2</span> Classic example: Sackett’s hospitalized patients</h2>
-<p>A classic example of collider bias was provided by <span class="citation" data-cites="sackett1979bias">Sackett (<a href="references.html#ref-sackett1979bias" role="doc-biblioref">1979</a>)</span> and discussed by <span class="citation" data-cites="catalogofbias_collider">Catalog of Bias Collaboration (<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">2024</a>)</span>. He analyzed data from 257 hospitalized individuals and detected an association between locomotor disease and respiratory disease (odds ratio 4.06). However, when he repeated the analysis in a sample of 2,783 individuals from the general population, he found no association (odds ratio 1.06). The original analysis of hospitalized individuals was biased because both diseases caused individuals to be hospitalized. By looking only within the stratum of hospitalized individuals, Sackett had observed a distorted association. In this example, locomotor disease and respiratory disease are independent causes of hospitalization—the collider. Controlling for the collider by study design (selection bias) induced a distorted association between the two diseases.</p>
+<section id="classic-example-sacketts-hospitalized-patients" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="classic-example-sacketts-hospitalized-patients"><span class="header-section-number">2</span> Classic example: Sackett’s hospitalized patients</h2>
+<p>A classic example of collider bias was provided by <span class="citation" data-cites="sackett1979bias">Sackett (<a href="#ref-sackett1979bias" role="doc-biblioref">1979</a>)</span> and discussed by <span class="citation" data-cites="catalogofbias_collider">Catalog of Bias Collaboration (<a href="#ref-catalogofbias_collider" role="doc-biblioref">2024</a>)</span>. He analyzed data from 257 hospitalized individuals and detected an association between locomotor disease and respiratory disease (odds ratio 4.06). However, when he repeated the analysis in a sample of 2,783 individuals from the general population, he found no association (odds ratio 1.06). The original analysis of hospitalized individuals was biased because both diseases caused individuals to be hospitalized. By looking only within the stratum of hospitalized individuals, Sackett had observed a distorted association. In this example, locomotor disease and respiratory disease are independent causes of hospitalization—the collider. Controlling for the collider by study design (selection bias) induced a distorted association between the two diseases.</p>
 </section>
-<section id="modern-example-the-obesity-paradox" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="modern-example-the-obesity-paradox"><span class="header-section-number">2.3</span> Modern example: The obesity paradox</h2>
-<p>A more recent example can be seen in the “obesity paradox”—an apparent protective effect of obesity on mortality in individuals with chronic conditions such as cardiovascular disease (CVD) <span class="citation" data-cites="catalogofbias_collider">(<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. In fact, obesity increases mortality rates in the general population. The collider bias occurs when investigators condition on CVD (by design or analysis), resulting in a distorted association. Consequently, in a sample that includes only patients with CVD, obesity falsely appears to protect against mortality, whereas in the wider population, obesity increases the risk of early death. <span class="citation" data-cites="banack2014obesity">Banack and Kaufman (<a href="references.html#ref-banack2014obesity" role="doc-biblioref">2014</a>)</span> showed using the third US National Health and Nutrition Examination Survey (NHANES III) that the unbiased mortality risk ratio for the entire cohort was 1.24 [95% CI = 1.11, 1.39] (harmful), but the biased stratum-specific mortality risk ratio in patients with CVD was 0.79 [95% CI = 0.68, 0.91] (protective).</p>
+<section id="modern-example-the-obesity-paradox" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="modern-example-the-obesity-paradox"><span class="header-section-number">3</span> Modern example: The obesity paradox</h2>
+<p>A more recent example can be seen in the “obesity paradox”—an apparent protective effect of obesity on mortality in individuals with chronic conditions such as cardiovascular disease (CVD) <span class="citation" data-cites="catalogofbias_collider">(<a href="#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. In fact, obesity increases mortality rates in the general population. The collider bias occurs when investigators condition on CVD (by design or analysis), resulting in a distorted association. Consequently, in a sample that includes only patients with CVD, obesity falsely appears to protect against mortality, whereas in the wider population, obesity increases the risk of early death. <span class="citation" data-cites="banack2014obesity">Banack and Kaufman (<a href="#ref-banack2014obesity" role="doc-biblioref">2014</a>)</span> showed using the third US National Health and Nutrition Examination Survey (NHANES III) that the unbiased mortality risk ratio for the entire cohort was 1.24 [95% CI = 1.11, 1.39] (harmful), but the biased stratum-specific mortality risk ratio in patients with CVD was 0.79 [95% CI = 0.68, 0.91] (protective).</p>
 </section>
-<section id="prevention" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="prevention"><span class="header-section-number">2.4</span> Prevention</h2>
-<p>Collider bias can be prevented by carefully applying appropriate inclusion criteria—making sure that the exposure and outcome of interest do not drive inclusion or selective retention in a study <span class="citation" data-cites="catalogofbias_collider">(<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. Causal diagrams (directed acyclic graphs or DAGs) can help identify colliders that should be left uncontrolled and confounders that should be controlled.</p>
-<p>For more detailed information about collider bias, including causal diagrams and additional examples, see <span class="citation" data-cites="catalogofbias_collider">Catalog of Bias Collaboration (<a href="references.html#ref-catalogofbias_collider" role="doc-biblioref">2024</a>)</span>.</p>
+<section id="prevention" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="prevention"><span class="header-section-number">4</span> Prevention</h2>
+<p>Collider bias can be prevented by carefully applying appropriate inclusion criteria—making sure that the exposure and outcome of interest do not drive inclusion or selective retention in a study <span class="citation" data-cites="catalogofbias_collider">(<a href="#ref-catalogofbias_collider" role="doc-biblioref">Catalog of Bias Collaboration 2024</a>)</span>. Causal diagrams (directed acyclic graphs or DAGs) can help identify colliders that should be left uncontrolled and confounders that should be controlled.</p>
+<p>For more detailed information about collider bias, including causal diagrams and additional examples, see <span class="citation" data-cites="catalogofbias_collider">Catalog of Bias Collaboration (<a href="#ref-catalogofbias_collider" role="doc-biblioref">2024</a>)</span>.</p>
 
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-banack2014obesity" class="csl-entry" role="listitem">
 Banack, Hailey R., and Jay S. Kaufman. 2014. <span>“The Obesity Paradox: Understanding the Effect of Obesity on Mortality Among Individuals with Cardiovascular Disease.”</span> <em>Preventive Medicine</em> 62: 96–102. <a href="https://doi.org/10.1016/j.ypmed.2014.02.001">https://doi.org/10.1016/j.ypmed.2014.02.001</a>.
 </div>
@@ -496,10 +535,7 @@ Catalog of Bias Collaboration. 2024. <em>Collider Bias</em>. <a href="https://ca
 <div id="ref-sackett1979bias" class="csl-entry" role="listitem">
 Sackett, D. L. 1979. <span>“Bias in Analytic Research.”</span> <em>Journal of Chronic Diseases</em> 32 (1-2): 51–63. <a href="https://doi.org/10.1016/0021-9681(79)90012-2">https://doi.org/10.1016/0021-9681(79)90012-2</a>.
 </div>
-</div>
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -672,7 +708,7 @@ Sackett, D. L. 1979. <span>“Bias in Analytic Research.”</span> <em>Journal o
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/morrison-lab\.github\.io\/cie\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1080,49 +1116,59 @@ Sackett, D. L. 1979. <span>“Bias in Analytic Research.”</span> <em>Journal o
 <nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="./intro-causal.html" class="pagination-link" aria-label="Introduction to causal inference">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to causal inference</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./bias-analyses.html" class="pagination-link" aria-label="Bias analyses">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bias analyses</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Bias analyses</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># Collider bias</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definition</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>A **collider** is a variable that is caused by two or more other variables in a causal diagram (directed acyclic graph or DAG) <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. The term "collider" comes from the visual representation where multiple arrows "collide" into the variable.</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>The basic collider structure is an **inverted fork (V-structure)**:</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">Exposure → Collider ← Outcome</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>More complex patterns exist, such as **M-structures** where multiple colliders are connected in chains, creating additional opportunities for bias when conditioning on any collider in the structure.</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>Inappropriately controlling for a collider variable, by study design or statistical analysis, results in **collider bias** <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Controlling for a collider can induce a distorted association between the exposure and outcome when in fact none exists. This bias predominantly occurs in observational studies. </span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>Because collider bias can be induced by sampling (restricting the study to certain values of the collider), selection bias can sometimes be considered to be a form of collider bias <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>.</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Classic example: Sackett's hospitalized patients</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Collider bias"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">metadata-files:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - _chapter-formats.yml</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: collider-bias-slides.html</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: collider-bias-handout.pdf</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Definition</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>A **collider** is a variable that is caused by two or more other variables in a causal diagram (directed acyclic graph or DAG) <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. The term "collider" comes from the visual representation where multiple arrows "collide" into the variable.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>The basic collider structure is an **inverted fork (V-structure)**:</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="in">Exposure → Collider ← Outcome</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>A classic example of collider bias was provided by @sackett1979bias and discussed by @catalogofbias_collider. He analyzed data from 257 hospitalized individuals and detected an association between locomotor disease and respiratory disease (odds ratio 4.06). However, when he repeated the analysis in a sample of 2,783 individuals from the general population, he found no association (odds ratio 1.06). The original analysis of hospitalized individuals was biased because both diseases caused individuals to be hospitalized. By looking only within the stratum of hospitalized individuals, Sackett had observed a distorted association. In this example, locomotor disease and respiratory disease are independent causes of hospitalization—the collider. Controlling for the collider by study design (selection bias) induced a distorted association between the two diseases.</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>More complex patterns exist, such as **M-structures** where multiple colliders are connected in chains, creating additional opportunities for bias when conditioning on any collider in the structure.</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modern example: The obesity paradox</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>Inappropriately controlling for a collider variable, by study design or statistical analysis, results in **collider bias** <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. </span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>A more recent example can be seen in the "obesity paradox"—an apparent protective effect of obesity on mortality in individuals with chronic conditions such as cardiovascular disease (CVD) <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. In fact, obesity increases mortality rates in the general population. The collider bias occurs when investigators condition on CVD (by design or analysis), resulting in a distorted association. Consequently, in a sample that includes only patients with CVD, obesity falsely appears to protect against mortality, whereas in the wider population, obesity increases the risk of early death. @banack2014obesity showed using the third US National Health and Nutrition Examination Survey (NHANES III) that the unbiased mortality risk ratio for the entire cohort was 1.24 <span class="co">[</span><span class="ot">95% CI = 1.11, 1.39</span><span class="co">]</span> (harmful), but the biased stratum-specific mortality risk ratio in patients with CVD was 0.79 <span class="co">[</span><span class="ot">95% CI = 0.68, 0.91</span><span class="co">]</span> (protective).</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Controlling for a collider can induce a distorted association between the exposure and outcome when in fact none exists. This bias predominantly occurs in observational studies. </span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prevention</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>Because collider bias can be induced by sampling (restricting the study to certain values of the collider), selection bias can sometimes be considered to be a form of collider bias <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>.</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>Collider bias can be prevented by carefully applying appropriate inclusion criteria—making sure that the exposure and outcome of interest do not drive inclusion or selective retention in a study <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. Causal diagrams (directed acyclic graphs or DAGs) can help identify colliders that should be left uncontrolled and confounders that should be controlled.</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Classic example: Sackett's hospitalized patients</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>For more detailed information about collider bias, including causal diagrams and additional examples, see @catalogofbias_collider.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>A classic example of collider bias was provided by @sackett1979bias and discussed by @catalogofbias_collider. He analyzed data from 257 hospitalized individuals and detected an association between locomotor disease and respiratory disease (odds ratio 4.06). However, when he repeated the analysis in a sample of 2,783 individuals from the general population, he found no association (odds ratio 1.06). The original analysis of hospitalized individuals was biased because both diseases caused individuals to be hospitalized. By looking only within the stratum of hospitalized individuals, Sackett had observed a distorted association. In this example, locomotor disease and respiratory disease are independent causes of hospitalization—the collider. Controlling for the collider by study design (selection bias) induced a distorted association between the two diseases.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Modern example: The obesity paradox</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>A more recent example can be seen in the "obesity paradox"—an apparent protective effect of obesity on mortality in individuals with chronic conditions such as cardiovascular disease (CVD) <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. In fact, obesity increases mortality rates in the general population. The collider bias occurs when investigators condition on CVD (by design or analysis), resulting in a distorted association. Consequently, in a sample that includes only patients with CVD, obesity falsely appears to protect against mortality, whereas in the wider population, obesity increases the risk of early death. @banack2014obesity showed using the third US National Health and Nutrition Examination Survey (NHANES III) that the unbiased mortality risk ratio for the entire cohort was 1.24 <span class="co">[</span><span class="ot">95% CI = 1.11, 1.39</span><span class="co">]</span> (harmful), but the biased stratum-specific mortality risk ratio in patients with CVD was 0.79 <span class="co">[</span><span class="ot">95% CI = 0.68, 0.91</span><span class="co">]</span> (protective).</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prevention</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>Collider bias can be prevented by carefully applying appropriate inclusion criteria—making sure that the exposure and outcome of interest do not drive inclusion or selective retention in a study <span class="co">[</span><span class="ot">@catalogofbias_collider</span><span class="co">]</span>. Causal diagrams (directed acyclic graphs or DAGs) can help identify colliders that should be left uncontrolled and confounders that should be controlled.</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>For more detailed information about collider bias, including causal diagrams and additional examples, see @catalogofbias_collider.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1136,7 +1182,7 @@ Sackett, D. L. 1979. <span>“Bias in Analytic Research.”</span> <em>Journal o
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/collider-bias.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/collider-bias.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/collider-bias.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/collider-bias.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

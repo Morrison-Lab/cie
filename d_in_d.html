@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.11.9">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>4&nbsp; Difference in differences analyses – Causal Inference in Epidemiology</title>
+<meta name="author" content="Douglas Ezra Morrison">
+<title>Difference in differences analyses – Causal Inference in Epidemiology</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -100,14 +101,14 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d998fb0a36ef24cb5530bcb19bf4ce4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5fc16af90d58a2426109a2ad05df5ae6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -166,7 +167,7 @@ window.Quarto = {
 };
 </script><link rel="stylesheet" href="custom.scss">
 </head>
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -339,25 +340,55 @@ window.Quarto = {
   </script>
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./d_in_d.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Difference in differences analyses</span></a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site"><div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Causal Inference in Epidemiology</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Morrison-Lab/cie" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Causal-Inference-in-Epidemiology.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site"><div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Causal Inference in Epidemiology</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+<li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-chapters" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Chapters</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-chapters">
+<li>
+    <a class="dropdown-item" href="./intro-causal.html">
+ <span class="dropdown-text">Introduction to causal inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./collider-bias.html">
+ <span class="dropdown-text">Collider bias</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bias-analyses.html">
+ <span class="dropdown-text">Bias analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./d_in_d.html">
+ <span class="dropdown-text">Difference in differences analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./further-resources.html">
+ <span class="dropdown-text">Further resources</span></a>
+  </li>  
+    </ul>
+</li>
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html"> 
+<span class="menu-text">References</span></a>
+  </li>  
+</ul>
+</div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -365,55 +396,54 @@ window.Quarto = {
   </div>
 </a>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav><nav class="quarto-secondary-nav" aria-label="Toolbar"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./d_in_d.html">Difference in differences analyses</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section"><div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Causal Inference in Epidemiology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-causal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></span></a>
+ <span class="menu-text">Introduction to causal inference</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./collider-bias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></span></a>
+ <span class="menu-text">Collider bias</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bias-analyses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bias analyses</span></span></a>
+ <span class="menu-text">Bias analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d_in_d.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Difference in differences analyses</span></span></a>
+ <span class="menu-text">Difference in differences analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further resources</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Further resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -427,36 +457,35 @@ window.Quarto = {
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active"><h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-<li>
-<a href="#change-in-changes" id="toc-change-in-changes" class="nav-link active" data-scroll-target="#change-in-changes"><span class="header-section-number">4.1</span> Change in Changes</a>
-  <ul class="collapse">
-<li><a href="#assumption" id="toc-assumption" class="nav-link" data-scroll-target="#assumption"><span class="header-section-number">4.1.1</span> Assumption</a></li>
-  <li><a href="#covariate-adjustment" id="toc-covariate-adjustment" class="nav-link" data-scroll-target="#covariate-adjustment"><span class="header-section-number">4.1.2</span> Covariate adjustment</a></li>
-  <li><a href="#r-implementation" id="toc-r-implementation" class="nav-link" data-scroll-target="#r-implementation"><span class="header-section-number">4.1.3</span> R implementation</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">4.1.4</span> Example</a></li>
-  </ul>
-</li>
-  </ul><div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/d_in_d.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/d_in_d.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="d_in_d-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="d_in_d-handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">
-<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Difference in differences analyses</span>
-</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Difference in differences analyses</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://demorrison.ucdavis.edu/">Douglas Ezra Morrison</a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Public Health Sciences, School of Medicine, University of California, Davis
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-12: 7:31:20 (AM)</p>
+      <p class="date">Last modified: 2026-11-12: 7:38:23 (AM)</p>
     </div>
   </div>
   
@@ -465,23 +494,23 @@ window.Quarto = {
   
 
 
-</header><p>Many approaches to causal inference assume exchangeability (<a href="intro-causal.html#def-cond-exch" class="quarto-xref">Definition&nbsp;<span>1.10</span></a>) and exploit its consequence (<a href="intro-causal.html#thm-exch" class="quarto-xref">Theorem&nbsp;<span>1.1</span></a>):</p>
+</header><p>Many approaches to causal inference assume <a href="./intro-causal.html#def-cond-exch">exchangeability</a> and exploit <a href="./intro-causal.html#thm-exch">its consequence</a>:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x\right]\mathclose{}}\]</span></p>
 <p>Write <span class="math inline">\(Y_{0,t}\)</span> for the potential outcome at time <span class="math inline">\(t\)</span> without treatment. Difference-in-differences makes a weaker exchangeability assumption:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{0,t} - Y_{0,t'} \mid X = 1\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{0,t} - Y_{0,t'} \mid X = 0\right]\mathclose{}}\]</span></p>
-<section id="change-in-changes" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="change-in-changes">
-<span class="header-section-number">4.1</span> Change in Changes</h2>
-<p>The <strong>Change in Changes (CiC)</strong> model <span class="citation" data-cites="atheyimbens2006">(<a href="references.html#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span> is a DiD-type method that estimates the <strong>Quantile Treatment Effect on the Treated (QTET)</strong> — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
-<p>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
-<section id="assumption" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="assumption">
-<span class="header-section-number">4.1.1</span> Assumption</h3>
-<p>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the <em>distribution</em> of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="citation" data-cites="atheyimbens2006">(<a href="references.html#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span>.</p>
-</section><section id="covariate-adjustment" class="level3" data-number="4.1.2"><h3 data-number="4.1.2" class="anchored" data-anchor-id="covariate-adjustment">
-<span class="header-section-number">4.1.2</span> Covariate adjustment</h3>
-<p>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="citation" data-cites="atheyimbens2006 bcallaway_cic">(<a href="references.html#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>; <a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
-</section><section id="r-implementation" class="level3" data-number="4.1.3"><h3 data-number="4.1.3" class="anchored" data-anchor-id="r-implementation">
-<span class="header-section-number">4.1.3</span> R implementation</h3>
-<p>The <code><a href="https://bcallaway11.github.io/qte/reference/CiC-deprecated.html">CiC()</a></code> function in the <code>qte</code> R package <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span> implements this estimator. Key arguments are (note: <code>formla</code> and <code>xformla</code> are the actual argument names in the package):</p>
+<section id="change-in-changes" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="change-in-changes">
+<span class="header-section-number">1</span> Change in Changes</h2>
+<p>The <strong>Change in Changes (CiC)</strong> model <span class="citation" data-cites="atheyimbens2006">(<a href="#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span> is a DiD-type method that estimates the <strong>Quantile Treatment Effect on the Treated (QTET)</strong> — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="citation" data-cites="bcallaway_cic">(<a href="#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
+<p>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="citation" data-cites="bcallaway_cic">(<a href="#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
+<section id="assumption" class="level3" data-number="1.1"><h3 data-number="1.1" class="anchored" data-anchor-id="assumption">
+<span class="header-section-number">1.1</span> Assumption</h3>
+<p>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the <em>distribution</em> of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="citation" data-cites="atheyimbens2006">(<a href="#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>)</span>.</p>
+</section><section id="covariate-adjustment" class="level3" data-number="1.2"><h3 data-number="1.2" class="anchored" data-anchor-id="covariate-adjustment">
+<span class="header-section-number">1.2</span> Covariate adjustment</h3>
+<p>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="citation" data-cites="atheyimbens2006 bcallaway_cic">(<a href="#ref-atheyimbens2006" role="doc-biblioref">Athey and Imbens 2006</a>; <a href="#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
+</section><section id="r-implementation" class="level3" data-number="1.3"><h3 data-number="1.3" class="anchored" data-anchor-id="r-implementation">
+<span class="header-section-number">1.3</span> R implementation</h3>
+<p>The <code><a href="https://bcallaway11.github.io/qte/reference/CiC-deprecated.html">CiC()</a></code> function in the <code>qte</code> R package <span class="citation" data-cites="bcallaway_cic">(<a href="#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span> implements this estimator. Key arguments are (note: <code>formla</code> and <code>xformla</code> are the actual argument names in the package):</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
@@ -533,9 +562,9 @@ window.Quarto = {
 </tbody>
 </table>
 <p>The function returns a <code>QTE</code> object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in <code>probs</code>.</p>
-</section><section id="example" class="level3" data-number="4.1.4"><h3 data-number="4.1.4" class="anchored" data-anchor-id="example">
-<span class="header-section-number">4.1.4</span> Example</h3>
-<p>The following example from <span class="citation" data-cites="bcallaway_cic">Callaway (<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">2024</a>)</span> estimates the QTET for the National Supported Work Demonstration job-training program using the <code>lalonde.psid.panel</code> dataset, conditioning on several pre-treatment characteristics:</p>
+</section><section id="example" class="level3" data-number="1.4"><h3 data-number="1.4" class="anchored" data-anchor-id="example">
+<span class="header-section-number">1.4</span> Example</h3>
+<p>The following example from <span class="citation" data-cites="bcallaway_cic">Callaway (<a href="#ref-bcallaway_cic" role="doc-biblioref">2024</a>)</span> estimates the QTET for the National Supported Work Demonstration job-training program using the <code>lalonde.psid.panel</code> dataset, conditioning on several pre-treatment characteristics:</p>
 <div class="cell">
 <details class="code-fold"><summary>Show R code</summary><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://bcallaway11.github.io/qte/">qte</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">lalonde</span><span class="op">)</span></span>
@@ -581,20 +610,20 @@ window.Quarto = {
 <span><span class="co">#&gt; Signif. codes: `*' confidence band does not cover 0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<p>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="citation" data-cites="bcallaway_cic">(<a href="references.html#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
+<p>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="citation" data-cites="bcallaway_cic">(<a href="#ref-bcallaway_cic" role="doc-biblioref">Callaway 2024</a>)</span>.</p>
 
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+
+</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-atheyimbens2006" class="csl-entry" role="listitem">
 Athey, Susan, and Guido Imbens. 2006. <span>“Identification and Inference in Nonlinear Difference-in-Differences Models.”</span> <em>Econometrica</em> 74 (2): 431–97. <a href="https://doi.org/10.1111/j.1468-0262.2006.00668.x">https://doi.org/10.1111/j.1468-0262.2006.00668.x</a>.
 </div>
 <div id="ref-bcallaway_cic" class="csl-entry" role="listitem">
 Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Quantile Treatment Effects</em>. <a href="https://bcallaway11.github.io/qte/reference/CiC.html">https://bcallaway11.github.io/qte/reference/CiC.html</a>.
 </div>
-</div>
-</section></section><a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
     if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -766,7 +795,7 @@ Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Q
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/morrison-lab\.github\.io\/cie\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1171,84 +1200,94 @@ Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Q
   window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
   </script><nav class="page-navigation" aria-label="Page"><div class="nav-page nav-page-previous">
       <a href="./bias-analyses.html" class="pagination-link" aria-label="Bias analyses">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bias analyses</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Bias analyses</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./further-resources.html" class="pagination-link" aria-label="Further resources">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further resources</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Further resources</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># Difference in differences analyses</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>Many approaches to causal inference assume</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>exchangeability (@def-cond-exch)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>and exploit its consequence (@thm-exch):</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>Write $\potout{0,t}$ for the potential outcome at time $t$ without treatment.</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>Difference-in-differences makes a weaker exchangeability assumption:</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{0,t} - \potout{0,t'} \given X = 1} = \Expf{\potout{0,t} - \potout{0,t'} \given X = 0}$$</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change in Changes</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>The **Change in Changes (CiC)** model [@atheyimbens2006] is a DiD-type method that estimates the **Quantile Treatment Effect on the Treated (QTET)** — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assumption</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Difference in differences analyses"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">metadata-files:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - _chapter-formats.yml</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: d_in_d-slides.html</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: d_in_d-handout.pdf</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>Many approaches to causal inference assume</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">exchangeability</span><span class="co">](intro-causal.qmd#def-cond-exch)</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>and exploit <span class="co">[</span><span class="ot">its consequence</span><span class="co">](intro-causal.qmd#thm-exch)</span>:</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>Write $\potout{0,t}$ for the potential outcome at time $t$ without treatment.</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>Difference-in-differences makes a weaker exchangeability assumption:</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the *distribution* of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="co">[</span><span class="ot">@atheyimbens2006</span><span class="co">]</span>.</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>$$\Expf{\potout{0,t} - \potout{0,t'} \given X = 1} = \Expf{\potout{0,t} - \potout{0,t'} \given X = 0}$$</span>
 <span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Covariate adjustment</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Change in Changes</span></span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="co">[</span><span class="ot">@atheyimbens2006; @bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>The **Change in Changes (CiC)** model [@atheyimbens2006] is a DiD-type method that estimates the **Quantile Treatment Effect on the Treated (QTET)** — that is, treatment effects across the full distribution of outcomes, not just the mean <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">### R implementation</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>CiC requires two periods of data (a pre-treatment and a post-treatment period). The data can be either repeated cross-sections or panel data <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>The <span class="in">`CiC()`</span> function in the <span class="in">`qte`</span> R package <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span> implements this estimator. Key arguments are (note: <span class="in">`formla`</span> and <span class="in">`xformla`</span> are the actual argument names in the package):</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Assumption</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Argument  <span class="pp">|</span> Description <span class="pp">|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------|-------------|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`formla`</span>  <span class="pp">|</span> <span class="in">`y ~ d`</span> where <span class="in">`y`</span> is the outcome and <span class="in">`d`</span> is a binary treatment indicator <span class="pp">|</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xformla`</span> <span class="pp">|</span> Optional one-sided formula for additional covariates (e.g., <span class="in">`~ age + education`</span>) <span class="pp">|</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`t`</span>       <span class="pp">|</span> Post-treatment time period <span class="pp">|</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tmin1`</span>   <span class="pp">|</span> Pre-treatment time period <span class="pp">|</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tname`</span>   <span class="pp">|</span> Name of the column containing the time variable <span class="pp">|</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`data`</span>    <span class="pp">|</span> Data frame containing all variables <span class="pp">|</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`panel`</span>   <span class="pp">|</span> <span class="in">`TRUE`</span> if the dataset is panel data <span class="pp">|</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`probs`</span>   <span class="pp">|</span> Vector of quantile levels at which to estimate the QTET <span class="pp">|</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`iters`</span>   <span class="pp">|</span> Number of bootstrap iterations for standard errors <span class="pp">|</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>The function returns a <span class="in">`QTE`</span> object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in <span class="in">`probs`</span>.</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>The following example from @bcallaway_cic estimates the QTET for the National Supported Work Demonstration job-training program using the <span class="in">`lalonde.psid.panel`</span> dataset, conditioning on several pre-treatment characteristics:</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qte)</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(lalonde)</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>Rather than the standard parallel trends assumption (that average outcomes would have followed parallel paths absent treatment), CiC assumes that the *distribution* of untreated potential outcomes evolves over time in the same way for both treated and control groups <span class="co">[</span><span class="ot">@atheyimbens2006</span><span class="co">]</span>.</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Covariate adjustment</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>CiC can condition on covariates by first fitting a linear model for outcomes conditional on group–time indicators and covariates, then residualizing (removing predicted values), and finally applying the CiC estimator to these quasi-residuals <span class="co">[</span><span class="ot">@atheyimbens2006; @bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="fu">### R implementation</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>The <span class="in">`CiC()`</span> function in the <span class="in">`qte`</span> R package <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span> implements this estimator. Key arguments are (note: <span class="in">`formla`</span> and <span class="in">`xformla`</span> are the actual argument names in the package):</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Argument  <span class="pp">|</span> Description <span class="pp">|</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|-----------|-------------|</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`formla`</span>  <span class="pp">|</span> <span class="in">`y ~ d`</span> where <span class="in">`y`</span> is the outcome and <span class="in">`d`</span> is a binary treatment indicator <span class="pp">|</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`xformla`</span> <span class="pp">|</span> Optional one-sided formula for additional covariates (e.g., <span class="in">`~ age + education`</span>) <span class="pp">|</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`t`</span>       <span class="pp">|</span> Post-treatment time period <span class="pp">|</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tmin1`</span>   <span class="pp">|</span> Pre-treatment time period <span class="pp">|</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`tname`</span>   <span class="pp">|</span> Name of the column containing the time variable <span class="pp">|</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`data`</span>    <span class="pp">|</span> Data frame containing all variables <span class="pp">|</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`panel`</span>   <span class="pp">|</span> <span class="in">`TRUE`</span> if the dataset is panel data <span class="pp">|</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`probs`</span>   <span class="pp">|</span> Vector of quantile levels at which to estimate the QTET <span class="pp">|</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`iters`</span>   <span class="pp">|</span> Number of bootstrap iterations for standard errors <span class="pp">|</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>The function returns a <span class="in">`QTE`</span> object with QTET estimates and (optionally) bootstrap confidence intervals at each quantile in <span class="in">`probs`</span>.</span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">CiC</span>(</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  re <span class="sc">~</span> treat,</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="dv">1978</span>, <span class="at">tmin1 =</span> <span class="dv">1975</span>, <span class="at">tname =</span> <span class="st">"year"</span>,</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="at">xformla =</span> <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> education <span class="sc">+</span> black <span class="sc">+</span> hispanic <span class="sc">+</span> married <span class="sc">+</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    nodegree,</span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> lalonde.psid.panel, <span class="at">idname =</span> <span class="st">"id"</span>,</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="fl">0.05</span>)</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(c1)</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Example</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>The following example from @bcallaway_cic estimates the QTET for the National Supported Work Demonstration job-training program using the <span class="in">`lalonde.psid.panel`</span> dataset, conditioning on several pre-treatment characteristics:</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qte)</span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(lalonde)</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>c1 <span class="ot">&lt;-</span> <span class="fu">CiC</span>(</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>  re <span class="sc">~</span> treat,</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">t =</span> <span class="dv">1978</span>, <span class="at">tmin1 =</span> <span class="dv">1975</span>, <span class="at">tname =</span> <span class="st">"year"</span>,</span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="at">xformla =</span> <span class="sc">~</span> age <span class="sc">+</span> <span class="fu">I</span>(age<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> education <span class="sc">+</span> black <span class="sc">+</span> hispanic <span class="sc">+</span> married <span class="sc">+</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>    nodegree,</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> lalonde.psid.panel, <span class="at">idname =</span> <span class="st">"id"</span>,</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="fl">0.05</span>, <span class="fl">0.95</span>, <span class="fl">0.05</span>)</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(c1)</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>The resulting QTET estimates suggest that the treatment had no measurable effect on the lower quantiles of the earnings distribution but large positive effects at higher quantiles, with an estimated average treatment effect of roughly $4,600 <span class="co">[</span><span class="ot">@bcallaway_cic</span><span class="co">]</span>.</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
@@ -1262,7 +1301,7 @@ Callaway, Brantly. 2024. <em><span>CiC</span>: Change in Changes Estimator for Q
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/d_in_d.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/d_in_d.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/d_in_d.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/d_in_d.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

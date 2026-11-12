@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Douglas Ezra Morrison">
 
-<title>1&nbsp; Introduction to causal inference – Causal Inference in Epidemiology</title>
+<title>Introduction to causal inference – Causal Inference in Epidemiology</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -104,15 +105,15 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-d998fb0a36ef24cb5530bcb19bf4ce4b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-6508b1f30742097208258cf9a2e21801.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5fc16af90d58a2426109a2ad05df5ae6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-43df61ec561a918427be9ba5d82d11c3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
-  "location": "sidebar",
+  "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
-  "panel-placement": "start",
-  "type": "textbox",
+  "panel-placement": "end",
+  "type": "overlay",
   "limit": 50,
   "keyboard-shortcut": [
     "f",
@@ -181,7 +182,7 @@ window.Quarto = {
 <link rel="stylesheet" href="custom.scss">
 </head>
 
-<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -355,30 +356,56 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" aria-label="Toolbar">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro-causal.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></a></li></ol></nav>
-        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="./">Causal Inference in Epidemiology</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/Morrison-Lab/cie" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./Causal-Inference-in-Epidemiology.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark" aria-label="Site">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Causal Inference in Epidemiology</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-chapters" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Chapters</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-chapters">    
+        <li>
+    <a class="dropdown-item" href="./intro-causal.html">
+ <span class="dropdown-text">Introduction to causal inference</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./collider-bias.html">
+ <span class="dropdown-text">Collider bias</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./bias-analyses.html">
+ <span class="dropdown-text">Bias analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./d_in_d.html">
+ <span class="dropdown-text">Difference in differences analyses</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./further-resources.html">
+ <span class="dropdown-text">Further resources</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./references.html"> 
+<span class="menu-text">References</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
   <button type="button" role="switch" aria-checked="false" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode" aria-label="Toggle dark mode"><i class="bi"></i></button>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -386,55 +413,60 @@ window.Quarto = {
   </div>
 </a>
 </div>
+            <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro-causal.html">Introduction to causal inference</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto" aria-label="Section">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Causal Inference in Epidemiology</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro-causal.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></span></a>
+ <span class="menu-text">Introduction to causal inference</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./collider-bias.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></span></a>
+ <span class="menu-text">Collider bias</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bias-analyses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bias analyses</span></span></a>
+ <span class="menu-text">Bias analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./d_in_d.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Difference in differences analyses</span></span></a>
+ <span class="menu-text">Difference in differences analyses</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./further-resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further resources</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Further resources</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -449,33 +481,39 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1.1</span> Introduction</a></li>
-  <li><a href="#individual-causal-effects" id="toc-individual-causal-effects" class="nav-link" data-scroll-target="#individual-causal-effects"><span class="header-section-number">1.2</span> Individual causal effects</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/intro-causal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/intro-causal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="intro-causal-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="intro-causal-handout.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content" tabindex="-1">
 
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to causal inference</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Introduction to causal inference</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://demorrison.ucdavis.edu/">Douglas Ezra Morrison</a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Public Health Sciences, School of Medicine, University of California, Davis
+          </p>
+      </div>
+  </div>
 
 <div class="quarto-title-meta">
 
-    
+      
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Last modified: 2026-11-12: 7:31:20 (AM)</p>
+      <p class="date">Last modified: 2026-11-12: 7:38:23 (AM)</p>
     </div>
   </div>
   
@@ -487,10 +525,10 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <hr>
-<p><span class="citation" data-cites="hernan2020causal">Hernán and Robins (<a href="references.html#ref-hernan2020causal" role="doc-biblioref">2020</a>)</span> (page vii):</p>
+<p><span class="citation" data-cites="hernan2020causal">Hernán and Robins (<a href="#ref-hernan2020causal" role="doc-biblioref">2020</a>)</span> (page vii):</p>
 <blockquote class="blockquote">
 <p>Unfortunately, the scientific literature is plagued by studies in which the causal question is not explicitly stated and the investigators’ unverifiable assumptions are not declared. This casual attitude towards causal inference has led to a great deal of confusion.</p>
 </blockquote>
@@ -498,30 +536,30 @@ window.Quarto = {
 <p>Rigorously defining cause and effect is difficult. Fortunately, many humans have strong intuitions about these concepts. We will make cursory attempts at definitions for the basic terms, and leave the finer points to philosophers.</p>
 </div>
 </section>
-<section id="individual-causal-effects" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="individual-causal-effects"><span class="header-section-number">1.2</span> Individual causal effects</h2>
+<section id="individual-causal-effects" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="individual-causal-effects"><span class="header-section-number">2</span> Individual causal effects</h2>
 <hr>
 <div id="def-action" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.1 (Action, intervention, exposure, policy, treatment)</strong></span> An <strong>action</strong> (also called an <strong>intervention, exposure, policy,</strong> or <strong>treatment</strong>) is a choice that we consider making.</p>
+<p><span class="theorem-title"><strong>Definition 1 (Action, intervention, exposure, policy, treatment)</strong></span> An <strong>action</strong> (also called an <strong>intervention, exposure, policy,</strong> or <strong>treatment</strong>) is a choice that we consider making.</p>
 </div>
 <hr>
 <div id="def-rv" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.2 (Random variable)</strong></span> A <strong>random variable</strong> is a variable that may have different values for different individuals and/or for different actions/exposures that an individual might experience. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p><span class="theorem-title"><strong>Definition 2 (Random variable)</strong></span> A <strong>random variable</strong> is a variable that may have different values for different individuals and/or for different actions/exposures that an individual might experience. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </div>
 <hr>
 <div id="def-potential-outcome" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.3 (potential outcome, consequence)</strong></span> A <strong>potential outcome</strong> of action <span class="math inline">\(a\)</span> (also called a <strong>consequence</strong> of <span class="math inline">\(a\)</span>) is the value of a random variable <span class="math inline">\(Y\)</span> that would occur if we were to take action <span class="math inline">\(a\)</span>. The potential outcome of action <span class="math inline">\(a\)</span> on random variable <span class="math inline">\(Y\)</span> is written <span class="math inline">\(Y(a)\)</span>, <span class="math inline">\(Y^a\)</span>, <span class="math inline">\(Y^{A=a}\)</span> or <span class="math inline">\(Y_a\)</span> in different sources. These notes write it with a subscript, as <span class="math inline">\(Y_{a}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 3 (potential outcome, consequence)</strong></span> A <strong>potential outcome</strong> of action <span class="math inline">\(a\)</span> (also called a <strong>consequence</strong> of <span class="math inline">\(a\)</span>) is the value of a random variable <span class="math inline">\(Y\)</span> that would occur if we were to take action <span class="math inline">\(a\)</span>. The potential outcome of action <span class="math inline">\(a\)</span> on random variable <span class="math inline">\(Y\)</span> is written <span class="math inline">\(Y(a)\)</span>, <span class="math inline">\(Y^a\)</span>, <span class="math inline">\(Y^{A=a}\)</span> or <span class="math inline">\(Y_a\)</span> in different sources. These notes write it with a subscript, as <span class="math inline">\(Y_{a}\)</span>.</p>
 </div>
 <hr>
 <div id="def-factual-outcome" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.4 (Factual outcome, observed outcome)</strong></span> A <em>factual outcome</em> (or <em>observed outcome</em>) is the potential outcome corresponding to an action that was actually taken.</p>
+<p><span class="theorem-title"><strong>Definition 4 (Factual outcome, observed outcome)</strong></span> A <em>factual outcome</em> (or <em>observed outcome</em>) is the potential outcome corresponding to an action that was actually taken.</p>
 </div>
 <div class="notes">
 <p>If we consider taking action <span class="math inline">\(a\)</span> or an alternative <span class="math inline">\(a'\)</span>, and we actually take action <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a}\)</span> is the factual outcome.</p>
 </div>
 <hr>
 <div id="def-counterfactual" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.5 (Counterfactual outcome)</strong></span> A counterfactual outcome is a potential outcome corresponding to an action that was not actually taken.</p>
+<p><span class="theorem-title"><strong>Definition 5 (Counterfactual outcome)</strong></span> A counterfactual outcome is a potential outcome corresponding to an action that was not actually taken.</p>
 </div>
 <div class="notes">
 <p>If we consider taking action <span class="math inline">\(a\)</span> or an alternative <span class="math inline">\(a'\)</span>, and we actually take action <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a'}\)</span> is a counterfactual outcome.</p>
@@ -529,7 +567,7 @@ window.Quarto = {
 </div>
 <hr>
 <div id="def-cause" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.6 (Cause)</strong></span> Action <span class="math inline">\(a\)</span> <strong>causes</strong> outcome <span class="math inline">\(y\)</span> (or is a cause of <span class="math inline">\(y\)</span>) if:</p>
+<p><span class="theorem-title"><strong>Definition 6 (Cause)</strong></span> Action <span class="math inline">\(a\)</span> <strong>causes</strong> outcome <span class="math inline">\(y\)</span> (or is a cause of <span class="math inline">\(y\)</span>) if:</p>
 <ul>
 <li>outcome <span class="math inline">\(y\)</span> would occur if we were to take action <span class="math inline">\(a\)</span><br>
 <strong>and</strong><br>
@@ -546,57 +584,57 @@ window.Quarto = {
 </div>
 <hr>
 <div id="def-effect" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.7 (effect)</strong></span> The effect of action <span class="math inline">\(a\)</span> on outcome <span class="math inline">\(Y\)</span>, relative to a given alternative action <span class="math inline">\(a'\)</span>, is the contrast in potential outcomes, <span class="math inline">\(Y_{a}\)</span> versus <span class="math inline">\(Y_{a'}\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 7 (effect)</strong></span> The effect of action <span class="math inline">\(a\)</span> on outcome <span class="math inline">\(Y\)</span>, relative to a given alternative action <span class="math inline">\(a'\)</span>, is the contrast in potential outcomes, <span class="math inline">\(Y_{a}\)</span> versus <span class="math inline">\(Y_{a'}\)</span>.</p>
 </div>
 <hr>
 <div id="def-consistency" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.8 (Consistency)</strong></span> Consistency is the assumption that if we observe an action <span class="math inline">\(a\)</span>, then the observed outcome <span class="math inline">\(Y\)</span> is equal to the “factual potential outcome” corresponding to action <span class="math inline">\(a\)</span>; in other words, if <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a} = Y\)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 8 (Consistency)</strong></span> Consistency is the assumption that if we observe an action <span class="math inline">\(a\)</span>, then the observed outcome <span class="math inline">\(Y\)</span> is equal to the “factual potential outcome” corresponding to action <span class="math inline">\(a\)</span>; in other words, if <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a} = Y\)</span>.</p>
 </div>
 <hr>
 <div id="def-exch" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.9 (Exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 9 (Exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[Y_{x} \perp\!\!\!\perp X\]</span></p>
 </div>
 <hr>
 <div id="thm-exch" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.1</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 1</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x\right]\mathclose{}}\]</span></p>
 </div>
 <hr>
 <div id="def-cond-exch" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.10 (Conditional exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>, conditional on covariate(s) <span class="math inline">\(Z\)</span>:</p>
+<p><span class="theorem-title"><strong>Definition 10 (Conditional exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>, conditional on covariate(s) <span class="math inline">\(Z\)</span>:</p>
 <p><span class="math display">\[Y_{x} \perp\!\!\!\perp X \mid\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}\]</span></p>
 </div>
 <hr>
 <div id="thm-cond-exch" class="theorem">
-<p><span class="theorem-title"><strong>Theorem 1.2</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are conditionally exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span> given covariate <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are conditionally exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span> given covariate <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x', \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}=\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{z}}\vphantom{z}}\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}=\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{z}}\vphantom{z}}\right]\mathclose{}}\]</span></p>
 </div>
 <hr>
 <div id="def-fund-causal-problem" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 1.11 (Fundamental problem of causal inference)</strong></span> The <em>fundamental problem of causal inference</em> is that only one potential outcome (the factual outcome) can be observed per person (or per sampling unit, more generally) <span class="citation" data-cites="holland1986">(<a href="references.html#ref-holland1986" role="doc-biblioref">Holland 1986</a>)</span>. The other, counterfactual outcomes, are all missing data, and thus, the causal effects are all missing data as well.</p>
+<p><span class="theorem-title"><strong>Definition 11 (Fundamental problem of causal inference)</strong></span> The <em>fundamental problem of causal inference</em> is that only one potential outcome (the factual outcome) can be observed per person (or per sampling unit, more generally) <span class="citation" data-cites="holland1986">(<a href="#ref-holland1986" role="doc-biblioref">Holland 1986</a>)</span>. The other, counterfactual outcomes, are all missing data, and thus, the causal effects are all missing data as well.</p>
 </div>
 
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+
+</section>
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-hernan2020causal" class="csl-entry" role="listitem">
 Hernán, MA, and J Robins. 2020. <span>“Causal Inference: What If. Boca Raton: Chapman &amp; Hill/Crc.(2020).”</span> <em>Publisher’s Note Springer Nature Remains Neutral with Regard to Jurisdictional Claims in Published Maps and Institutional Affiliations</em>. <a href="https://miguelhernan.org/whatifbook">https://miguelhernan.org/whatifbook</a>.
 </div>
 <div id="ref-holland1986" class="csl-entry" role="listitem">
 Holland, Paul W. 1986. <span>“Statistics and Causal Inference.”</span> <em>Journal of the American Statistical Association</em> 81 (396): 945–60. <a href="https://doi.org/10.1080/01621459.1986.10478354">https://doi.org/10.1080/01621459.1986.10478354</a>.
 </div>
-</div>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>adapted from <span class="citation" data-cites="hernan2020causal">Hernán and Robins (<a href="references.html#ref-hernan2020causal" role="doc-biblioref">2020</a>)</span> p3<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<ol>
+<li id="fn1"><p>adapted from <span class="citation" data-cites="hernan2020causal">Hernán and Robins (<a href="#ref-hernan2020causal" role="doc-biblioref">2020</a>)</span> p3<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -769,7 +807,7 @@ Holland, Paul W. 1986. <span>“Statistics and Causal Inference.”</span> <em>J
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/morrison-lab\.github\.io\/cie\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1176,46 +1214,56 @@ Holland, Paul W. 1986. <span>“Statistics and Causal Inference.”</span> <em>J
   </script>
 <nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Causal Inference in Epidemiology">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Causal Inference in Epidemiology</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./collider-bias.html" class="pagination-link" aria-label="Collider bias">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Collider bias</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text">Collider bias</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction to causal inference</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>@hernan2020causal (page vii): </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Unfortunately, </span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">the scientific literature is plagued by studies in which </span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">the causal question is not explicitly stated </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">and the investigators’ unverifiable assumptions are not declared.</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">This casual attitude towards causal inference </span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">has led to a great deal of confusion.</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>::: notes</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Rigorously defining cause and effect is difficult.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Fortunately, many humans have strong intuitions about these concepts.</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>We will make cursory attempts at definitions for the basic terms,</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>and leave the finer points to philosophers.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Individual causal effects</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Introduction to causal inference"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">metadata-files:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  - _chapter-formats.yml</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">  revealjs:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: intro-causal-slides.html</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    output-file: intro-causal-handout.pdf</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>{{&lt; include latex-macros/macros.qmd &gt;}}</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>@hernan2020causal (page vii): </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; Unfortunately, </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="at">the scientific literature is plagued by studies in which </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="at">the causal question is not explicitly stated </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="at">and the investigators’ unverifiable assumptions are not declared.</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="at">This casual attitude towards causal inference </span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="at">has led to a great deal of confusion.</span></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>{{&lt; include _sec-individual-causal-effects.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>::: notes</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Rigorously defining cause and effect is difficult.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Fortunately, many humans have strong intuitions about these concepts.</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>We will make cursory attempts at definitions for the basic terms,</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>and leave the finer points to philosophers.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">## Individual causal effects</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>{{&lt; include _sec-individual-causal-effects.qmd &gt;}}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1229,7 +1277,7 @@ Holland, Paul W. 1986. <span>“Statistics and Causal Inference.”</span> <em>J
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/intro-causal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/intro-causal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Morrison-Lab/cie/edit/main/intro-causal.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Morrison-Lab/cie/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li><li><a href="https://github.com/Morrison-Lab/cie/blob/main/intro-causal.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
