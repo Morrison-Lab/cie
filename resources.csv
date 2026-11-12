@@ -32,3 +32,4 @@ Books,Code for Hernán and Robins's What If,software,R notebook for part 2 of Wh
 Books,Code for Hernán and Robins's What If,software,R programs for chapters 12 and 13 of What If,,https://github.com/ehsanx/causal,,,,
 Software,,software,TrialEmulation,"Isaac Gravestock, Li Su, Roonak Rezvani, Julia Moesch and Juliette Limozin",https://github.com/Causal-LDA/TrialEmulation,"an R package that emulates a target trial in observational time-to-event data, estimating intention-to-treat and per-protocol effects with marginal structural models",,,
 Papers,,paper,,,,argues that observational studies should name their causal goal instead of describing causal effect estimates as associations,,,hernan2018cword
+Papers,,paper,,,,"proves that causal inference without substantial assumptions is possible only for a meager set of structural causal models, so the assumptions that license causal conclusions cannot be verified from data",,,ibeling2021topological
