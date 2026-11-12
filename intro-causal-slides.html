@@ -6,7 +6,9 @@
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/quarto-contrib/callouty-theorem-1.4.2/callouty-theorem.js"></script>
+<link href="site_libs/quarto-contrib/callouty-theorem-1.4.2/callouty-theorem.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.11.9">
 
   <meta name="author" content="Douglas Ezra Morrison">
@@ -160,6 +162,98 @@
       margin-right: 0; 
     }
   </style>
+  <style>
+  .reveal div.callout-prp.callout {
+    border-left-color: #827717;
+  }
+  .reveal div.callout-prp.callout-style-default .callout-title {
+    background-color: rgba(130, 119, 23, 0.13);
+  }
+  .reveal div.callout-prp.callout-style-default .callout-icon::before, .reveal div.callout-prp.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-solution.callout {
+    border-left-color: #4E342E;
+  }
+  .reveal div.callout-solution.callout-style-default .callout-title {
+    background-color: rgba(78, 52, 46, 0.13);
+  }
+  .reveal div.callout-solution.callout-style-default .callout-icon::before, .reveal div.callout-solution.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%234E342E" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-lem.callout {
+    border-left-color: #1565C0;
+  }
+  .reveal div.callout-lem.callout-style-default .callout-title {
+    background-color: rgba(21, 101, 192, 0.13);
+  }
+  .reveal div.callout-lem.callout-style-default .callout-icon::before, .reveal div.callout-lem.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-remark.callout {
+    border-left-color: #AD1457;
+  }
+  .reveal div.callout-remark.callout-style-default .callout-title {
+    background-color: rgba(173, 20, 87, 0.13);
+  }
+  .reveal div.callout-remark.callout-style-default .callout-icon::before, .reveal div.callout-remark.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-cor.callout {
+    border-left-color: #00838F;
+  }
+  .reveal div.callout-cor.callout-style-default .callout-title {
+    background-color: rgba(0, 131, 143, 0.13);
+  }
+  .reveal div.callout-cor.callout-style-default .callout-icon::before, .reveal div.callout-cor.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-exr.callout {
+    border-left-color: #FFA500;
+  }
+  .reveal div.callout-exr.callout-style-default .callout-title {
+    background-color: rgba(255, 165, 0, 0.13);
+  }
+  .reveal div.callout-exr.callout-style-default .callout-icon::before, .reveal div.callout-exr.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-exm.callout {
+    border-left-color: #6A1B9A;
+  }
+  .reveal div.callout-exm.callout-style-default .callout-title {
+    background-color: rgba(106, 27, 154, 0.13);
+  }
+  .reveal div.callout-exm.callout-style-default .callout-icon::before, .reveal div.callout-exm.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-cnj.callout {
+    border-left-color: #558B2F;
+  }
+  .reveal div.callout-cnj.callout-style-default .callout-title {
+    background-color: rgba(85, 139, 47, 0.13);
+  }
+  .reveal div.callout-cnj.callout-style-default .callout-icon::before, .reveal div.callout-cnj.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-proof.callout {
+    border-left-color: #37474F;
+  }
+  .reveal div.callout-proof.callout-style-default .callout-title {
+    background-color: rgba(55, 71, 79, 0.13);
+  }
+  .reveal div.callout-proof.callout-style-default .callout-icon::before, .reveal div.callout-proof.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-def.callout {
+    border-left-color: #1B5E20;
+  }
+  .reveal div.callout-def.callout-style-default .callout-title {
+    background-color: rgba(27, 94, 32, 0.13);
+  }
+  .reveal div.callout-def.callout-style-default .callout-icon::before, .reveal div.callout-def.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  </style>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -212,26 +306,82 @@
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-action" class="quarto-xref">Definition&nbsp;1</a> (Action, intervention, exposure, policy, treatment)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-action" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Action, intervention, exposure, policy, treatment)</strong></span> An <strong>action</strong> (also called an <strong>intervention, exposure, policy,</strong> or <strong>treatment</strong>) is a choice that we consider making.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2 scrollable">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-rv" class="quarto-xref">Definition&nbsp;2</a> (Random variable)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-rv" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Random variable)</strong></span> A <strong>random variable</strong> is a variable that may have different values for different individuals and/or for different actions/exposures that an individual might experience. <sup>1</sup></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>adapted from <span class="citation" data-cites="hernan2020causal">Hernán and Robins (<a href="#/references" role="doc-biblioref" onclick="">2020</a>)</span> p3</p></li></ol></aside></section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-potential-outcome" class="quarto-xref">Definition&nbsp;3</a> (potential outcome, consequence)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-potential-outcome" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 3 (potential outcome, consequence)</strong></span> A <strong>potential outcome</strong> of action <span class="math inline">\(a\)</span> (also called a <strong>consequence</strong> of <span class="math inline">\(a\)</span>) is the value of a random variable <span class="math inline">\(Y\)</span> that would occur if we were to take action <span class="math inline">\(a\)</span>. The potential outcome of action <span class="math inline">\(a\)</span> on random variable <span class="math inline">\(Y\)</span> is written <span class="math inline">\(Y(a)\)</span>, <span class="math inline">\(Y^a\)</span>, <span class="math inline">\(Y^{A=a}\)</span> or <span class="math inline">\(Y_a\)</span> in different sources. These notes write it with a subscript, as <span class="math inline">\(Y_{a}\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-factual-outcome" class="quarto-xref">Definition&nbsp;4</a> (Factual outcome, observed outcome)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-factual-outcome" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4 (Factual outcome, observed outcome)</strong></span> A <em>factual outcome</em> (or <em>observed outcome</em>) is the potential outcome corresponding to an action that was actually taken.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <aside class="notes">
 <p>If we consider taking action <span class="math inline">\(a\)</span> or an alternative <span class="math inline">\(a'\)</span>, and we actually take action <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a}\)</span> is the factual outcome.</p>
@@ -249,8 +399,22 @@
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-counterfactual" class="quarto-xref">Definition&nbsp;5</a> (Counterfactual outcome)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-counterfactual" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 5 (Counterfactual outcome)</strong></span> A counterfactual outcome is a potential outcome corresponding to an action that was not actually taken.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <aside class="notes">
 <p>If we consider taking action <span class="math inline">\(a\)</span> or an alternative <span class="math inline">\(a'\)</span>, and we actually take action <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a'}\)</span> is a counterfactual outcome.</p>
@@ -269,6 +433,16 @@
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-cause" class="quarto-xref">Definition&nbsp;6</a> (Cause)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-cause" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 6 (Cause)</strong></span> Action <span class="math inline">\(a\)</span> <strong>causes</strong> outcome <span class="math inline">\(y\)</span> (or is a cause of <span class="math inline">\(y\)</span>) if:</p>
 <ul>
@@ -285,51 +459,153 @@
 <li><span class="math inline">\(\exists a' \neq a: Y_{a'} \neq y\)</span></li>
 </ul>
 </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-effect" class="quarto-xref">Definition&nbsp;7</a> (effect)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-effect" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 7 (effect)</strong></span> The effect of action <span class="math inline">\(a\)</span> on outcome <span class="math inline">\(Y\)</span>, relative to a given alternative action <span class="math inline">\(a'\)</span>, is the contrast in potential outcomes, <span class="math inline">\(Y_{a}\)</span> versus <span class="math inline">\(Y_{a'}\)</span>.</p>
 </div>
-</section>
-<section class="slide level2">
-
-<div id="def-consistency" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8 (Consistency)</strong></span> Consistency is the assumption that if we observe an action <span class="math inline">\(a\)</span>, then the observed outcome <span class="math inline">\(Y\)</span> is equal to the “factual potential outcome” corresponding to action <span class="math inline">\(a\)</span>; in other words, if <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a} = Y\)</span>.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-consistency" class="quarto-xref">Definition&nbsp;8</a> (Consistency)</strong></p>
+</div>
+<div class="callout-content">
+<div id="def-consistency" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8 (Consistency)</strong></span> Consistency is the assumption that if we observe an action <span class="math inline">\(a\)</span>, then the observed outcome <span class="math inline">\(Y\)</span> is equal to the “factual potential outcome” corresponding to action <span class="math inline">\(a\)</span>; in other words, if <span class="math inline">\(A=a\)</span>, then <span class="math inline">\(Y_{a} = Y\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-exch" class="quarto-xref">Definition&nbsp;9</a> (Exchangeability)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-exch" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 9 (Exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[Y_{x} \perp\!\!\!\perp X\]</span></p>
 </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-lem callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/thm-exch" class="quarto-xref">Theorem&nbsp;1</a></strong></p>
+</div>
+<div class="callout-content">
 <div id="thm-exch" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x'\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x\right]\mathclose{}}\]</span></p>
 </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-cond-exch" class="quarto-xref">Definition&nbsp;10</a> (Conditional exchangeability)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-cond-exch" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 10 (Conditional exchangeability)</strong></span> Subpopulations defined by exposure <span class="math inline">\(X\)</span> are exchangeable with respect to a potential outcome <span class="math inline">\(Y_{x}\)</span> if the distribution of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed exposure <span class="math inline">\(X\)</span>, conditional on covariate(s) <span class="math inline">\(Z\)</span>:</p>
 <p><span class="math display">\[Y_{x} \perp\!\!\!\perp X \mid\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}\]</span></p>
 </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2">
 
+<div class="callouty-titled">
+<div class="callout callout-lem callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/thm-cond-exch" class="quarto-xref">Theorem&nbsp;2</a></strong></p>
+</div>
+<div class="callout-content">
 <div id="thm-cond-exch" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 2</strong></span> If subpopulations defined by values of exposure <span class="math inline">\(X\)</span> are conditionally exchangeable with respect to potential outcome <span class="math inline">\(Y_{x}\)</span> given covariate <span class="math inline">\(\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}\)</span>, then the expected value of <span class="math inline">\(Y_{x}\)</span> does not depend on the observed value of <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[{\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x', \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}=\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{z}}\vphantom{z}}\right]\mathclose{}} = {\mathbb{E}\mathopen{}\left[Y_{x} \mid X = x, \mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{Z}}\vphantom{Z}}=\mathord{\smash[b]{\underset{\raise.3ex\hbox{$\scriptstyle\sim$}}{z}}\vphantom{z}}\right]\mathclose{}}\]</span></p>
 </div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section class="slide level2 smaller scrollable" id="references">
 
+<div class="callouty-titled">
+<div class="callout callout-def callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong><a href="#/def-fund-causal-problem" class="quarto-xref">Definition&nbsp;11</a> (Fundamental problem of causal inference)</strong></p>
+</div>
+<div class="callout-content">
 <div id="def-fund-causal-problem" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 11 (Fundamental problem of causal inference)</strong></span> The <em>fundamental problem of causal inference</em> is that only one potential outcome (the factual outcome) can be observed per person (or per sampling unit, more generally) <span class="citation" data-cites="holland1986">(<a href="#/references" role="doc-biblioref" onclick="">Holland 1986</a>)</span>. The other, counterfactual outcomes, are all missing data, and thus, the causal effects are all missing data as well.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
