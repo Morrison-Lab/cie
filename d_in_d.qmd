@@ -6,11 +6,11 @@ Many approaches to causal inference assume
 exchangeability (@def-cond-exch)
 and exploit its consequence (@thm-exch):
 
-$$\Expf{Y(x) | X = x'} = \Expf{Y(x) | X = x}$$
+$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$
 
 Difference-in-differences makes a weaker exchangeability assumption:
 
-$$\Expf{Y_t(0) - Y_{t'}(0) | X = 1} = \Expf{Y_t(0) - Y_{t'}(0) | X = 0}$$
+$$\Expf{Y_t(0) - Y_{t'}(0) \given X = 1} = \Expf{Y_t(0) - Y_{t'}(0) \given X = 0}$$
 
 ## Change in Changes
 
