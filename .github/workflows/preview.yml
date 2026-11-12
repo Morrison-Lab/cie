@@ -17,6 +17,9 @@ on:
       - '*.js'
       - '.github/workflows/**'
       - '*.qmd'
+      # a change to the shared math macros changes every rendered equation
+      - 'latex-macros'
+      - '.gitmodules'
 
 concurrency: preview-${{ github.ref }}
 
@@ -29,6 +32,9 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          # fetch the latex-macros submodule: the lab's shared math macros
+          submodules: true
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -55,12 +61,12 @@ jobs:
       - name: list files
         shell: bash
         run: |
-          echo "contents of _book:\n"
-          ls _book/
+          echo "contents of _site:\n"
+          ls _site/
           echo "contents of .:\n"
           ls .
       - name: Deploy PR Preview
         uses: rossjrw/pr-preview-action@main
         with:
-          source-dir: _book/
+          source-dir: _site/
 

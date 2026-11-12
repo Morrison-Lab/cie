@@ -48,6 +48,10 @@ jobs:
       SUBMODULES_TOKEN: ${{ secrets.SUBMODULES_TOKEN }}   # optional; only for private submodules
     with:
       pr-number: ${{ inputs.pr_number }}
+      # The math macros come from the latex-macros submodule; without it the
+      # reviewer cannot see which macros exist.
+      checkout-submodules: true
+      check-latex-macros: true
       # `claude` is included because a remote Claude session pushing a
       # commit directly to a PR fires `synchronize` with `claude` as the
       # actor, and a dispatched review's actor is `github-actions[bot]`

@@ -1,5 +1,5 @@
 profile:
-  default: book
+  default: website
 editor_options:
   chunk_output_type: console
 editor:

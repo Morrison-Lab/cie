@@ -3,9 +3,9 @@
 :::{#thm-exch}
 
 If subpopulations defined by values of exposure $X$ are
-exchangeable with respect to potential outcome $Y(x)$,
-then the expected value of $Y(x)$ does not depend on the observed value of $X$:
+exchangeable with respect to potential outcome $\potout{x}$,
+then the expected value of $\potout{x}$ does not depend on the observed value of $X$:
 
-$$\thmExch$$
+$$\Expf{\potout{x} \given X = x'} = \Expf{\potout{x} \given X = x}$$
 
 :::
