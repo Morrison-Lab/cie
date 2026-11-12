@@ -16,12 +16,12 @@ book:
       affiliation: Department of Public Health Sciences, School of Medicine, University of California, Davis
   page-footer:
     left:
-      - text: "Copyright 2024, Douglas Ezra Morrison"
+      - text: "Copyright 2024-2026, Douglas Ezra Morrison"
   date: last-modified
   date-format: "[Last modified:] YYYY-MM-DD: H:mm:ss (z)"
   # google-analytics: "G-VS314RJ2KP"
   reader-mode: true
-  repo-url: https://github.com/d-morrison/rme
+  repo-url: https://github.com/Morrison-Lab/cie
   repo-actions: [edit, issue, source]
   chapters:
     - index.qmd
@@ -32,19 +32,6 @@ book:
     - further-resources.qmd
     - summary.qmd
   references: references.qmd
-  # appendices:
-  #   - appendices-are-prereqs.qmd
-  #   - math-prereqs.qmd
-  #   - probability.qmd
-  #   - estimation.qmd
-  #   - inference.qmd
-  #   - intro-MLEs.qmd
-  #   - intro-bayes.qmd
-  #   - common-mistakes.qmd
-  #   - notation.qmd
-  #   - intro-to-R.qmd
-  #   - CONTRIBUTING.md
-  #   - midterm-formula-sheet.qmd
   back-to-top-navigation: true
   page-navigation: true
 
@@ -56,7 +43,7 @@ format:
     link-external-icon: true
     embed-resources: false # breaks pdf version
     shift-heading-level-by: 0
-    subject: "Epidemiology 204"
+    subject: "Causal Inference in Epidemiology"
     date: last-modified
     date-format: "[Last modified:] YYYY-MM-DD: H:mm:ss (A)"
     theme:
