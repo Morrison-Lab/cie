@@ -4,7 +4,8 @@
 
 On the **regularity view**,
 saying that $A$ causes $B$ means that
-events like $A$ are always followed by events like $B$,
+every event like $A$ is followed by an event like $B$
+(a "constant conjunction"),
 with $A$ coming first
 and the two occurring close together in space and time.
 
