@@ -1,11 +1,10 @@
 :::{#exm-regularity}
-<!-- no-figure: conceptual example with no data to plot -->
 
 #### Regularity and smoking
+<!-- no-figure: conceptual example with no data to plot -->
 
 Under a strict reading of the regularity view,
 "smoking causes lung cancer" would be false,
-because many smokers never develop lung cancer
-and some non-smokers do.
+because many smokers never develop lung cancer.
 
 :::

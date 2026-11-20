@@ -1,7 +1,7 @@
 :::{#exm-probabilistic-view}
-<!-- no-figure: conceptual example with no data to plot -->
 
 #### Probability raising and smoking
+<!-- no-figure: conceptual example with no data to plot -->
 
 Smoking raises the probability of lung cancer
 among people who are alike in age and other relevant factors,

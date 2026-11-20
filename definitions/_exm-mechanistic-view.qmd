@@ -1,7 +1,7 @@
 :::{#exm-mechanistic-view}
-<!-- no-figure: conceptual example with no data to plot -->
 
 #### Mechanism and smoking
+<!-- no-figure: conceptual example with no data to plot -->
 
 A mechanistic account of smoking and lung cancer
 would describe the steps between inhaling smoke

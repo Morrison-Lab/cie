@@ -1,7 +1,7 @@
 :::{#exm-counterfactual-account}
-<!-- no-figure: conceptual example with no data to plot -->
 
 #### Counterfactual account and smoking cessation
+<!-- no-figure: conceptual example with no data to plot -->
 
 Suppose a patient quit smoking
 and did not develop lung cancer.

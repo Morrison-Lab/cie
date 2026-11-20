@@ -1,7 +1,7 @@
 :::{#exm-interventions}
-<!-- no-figure: conceptual example with no data to plot -->
 
 #### A well-defined and an ill-defined question
+<!-- no-figure: conceptual example with no data to plot -->
 
 "What would a patient's blood pressure be
 if they took 10 mg of a particular antihypertensive daily for a year?"

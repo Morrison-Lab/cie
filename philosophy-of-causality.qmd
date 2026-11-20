@@ -92,15 +92,19 @@ so neither counts as a cause.
 The potential-outcomes framework avoids the first difficulty
 by defining the counterfactual in terms of a specific action
 ([actions](intro-causal.qmd#def-action), @sec-manipulability),
-and mostly sidesteps the second
-by asking about the effect of one well-specified action at a time.
+but it does not remove the second:
+the effect of removing only one of two sufficient causes is still zero.
+Contrasting the outcome when both causes are removed
+with the outcome when neither is removed would show an effect,
+which is one reason to specify the whole intervention.
 
 ### Manipulation and intervention {#sec-manipulability}
 
 {{< include definitions/_def-manipulability.qmd >}}
 
-Here the cause is something that someone could in principle change.
-Holland summarized this view as "no causation without manipulation"
+Here the cause is something that an intervention could in principle change.
+Holland summarized a stricter, agent-based version of this view
+as "no causation without manipulation"
 [@holland1986].
 
 {{< include definitions/_exm-manipulability.qmd >}}
@@ -123,8 +127,9 @@ and does not determine it.
 
 Its main difficulty is the one every observational study faces.
 Probability raising can come from confounding,
-so "after other relevant factors are held fixed" does the heavy lifting,
-and the view does not say which factors those are.
+so the condition that other relevant earlier events
+do not explain the increase away does the heavy lifting,
+and the view does not say which events those are.
 [The chapter on bias analyses](bias-analyses.qmd)
 discusses how to handle that question in practice.
 
@@ -151,7 +156,7 @@ without describing how the action works.
 |---|---|---|
 | Regularity | Events of type $A$ are followed by events of type $B$ | Motivates asking whether an association is causal; too strict for stochastic outcomes |
 | Counterfactual | $B$ would not have occurred without $A$ | Basis of [potential outcomes](intro-causal.qmd#def-potential-outcome) and [counterfactual outcomes](intro-causal.qmd#def-counterfactual) |
-| Manipulability | A cause is something one could change | Basis of the definitions of [actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause) |
+| Manipulability | A cause is something an intervention could change | Basis of the definitions of [actions](intro-causal.qmd#def-action) and [causes](intro-causal.qmd#def-cause) |
 | Probabilistic | Causes raise probabilities | Matches estimands defined on risks and means |
 | Mechanistic | Causes work through mechanisms | Not needed for definitions; useful as supporting evidence |
 

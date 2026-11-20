@@ -6,6 +6,10 @@ On the **mechanistic view**,
 $A$ causes $B$ if
 there is a mechanism,
 an organized set of entities and activities,
-that links $A$ to $B$ [@machamer2000thinking].
+that links $A$ to $B$.
+This gloss builds on Machamer, Darden, and Craver's account of mechanisms
+[@machamer2000thinking],
+which analyzes mechanistic explanation
+and does not define causation itself.
 
 :::
