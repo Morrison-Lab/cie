@@ -163,6 +163,15 @@
     }
   </style>
   <style>
+  .reveal div.callout-proof.callout {
+    border-left-color: #37474F;
+  }
+  .reveal div.callout-proof.callout-style-default .callout-title {
+    background-color: rgba(55, 71, 79, 0.13);
+  }
+  .reveal div.callout-proof.callout-style-default .callout-icon::before, .reveal div.callout-proof.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
   .reveal div.callout-solution.callout {
     border-left-color: #4E342E;
   }
@@ -181,14 +190,14 @@
   .reveal div.callout-lem.callout-style-default .callout-icon::before, .reveal div.callout-lem.callout-titled .callout-icon::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231565C0" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
-  .reveal div.callout-cor.callout {
-    border-left-color: #00838F;
+  .reveal div.callout-cnj.callout {
+    border-left-color: #558B2F;
   }
-  .reveal div.callout-cor.callout-style-default .callout-title {
-    background-color: rgba(0, 131, 143, 0.13);
+  .reveal div.callout-cnj.callout-style-default .callout-title {
+    background-color: rgba(85, 139, 47, 0.13);
   }
-  .reveal div.callout-cor.callout-style-default .callout-icon::before, .reveal div.callout-cor.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  .reveal div.callout-cnj.callout-style-default .callout-icon::before, .reveal div.callout-cnj.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
   .reveal div.callout-def.callout {
     border-left-color: #1B5E20;
@@ -199,6 +208,15 @@
   .reveal div.callout-def.callout-style-default .callout-icon::before, .reveal div.callout-def.callout-titled .callout-icon::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%231B5E20" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
+  .reveal div.callout-cor.callout {
+    border-left-color: #00838F;
+  }
+  .reveal div.callout-cor.callout-style-default .callout-title {
+    background-color: rgba(0, 131, 143, 0.13);
+  }
+  .reveal div.callout-cor.callout-style-default .callout-icon::before, .reveal div.callout-cor.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2300838F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
   .reveal div.callout-prp.callout {
     border-left-color: #827717;
   }
@@ -207,15 +225,6 @@
   }
   .reveal div.callout-prp.callout-style-default .callout-icon::before, .reveal div.callout-prp.callout-titled .callout-icon::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23827717" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
-  .reveal div.callout-exr.callout {
-    border-left-color: #FFA500;
-  }
-  .reveal div.callout-exr.callout-style-default .callout-title {
-    background-color: rgba(255, 165, 0, 0.13);
-  }
-  .reveal div.callout-exr.callout-style-default .callout-icon::before, .reveal div.callout-exr.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
   .reveal div.callout-exm.callout {
     border-left-color: #6A1B9A;
@@ -226,24 +235,6 @@
   .reveal div.callout-exm.callout-style-default .callout-icon::before, .reveal div.callout-exm.callout-titled .callout-icon::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%236A1B9A" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
-  .reveal div.callout-cnj.callout {
-    border-left-color: #558B2F;
-  }
-  .reveal div.callout-cnj.callout-style-default .callout-title {
-    background-color: rgba(85, 139, 47, 0.13);
-  }
-  .reveal div.callout-cnj.callout-style-default .callout-icon::before, .reveal div.callout-cnj.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23558B2F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
-  .reveal div.callout-proof.callout {
-    border-left-color: #37474F;
-  }
-  .reveal div.callout-proof.callout-style-default .callout-title {
-    background-color: rgba(55, 71, 79, 0.13);
-  }
-  .reveal div.callout-proof.callout-style-default .callout-icon::before, .reveal div.callout-proof.callout-titled .callout-icon::before {
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%2337474F" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
-  }
   .reveal div.callout-remark.callout {
     border-left-color: #AD1457;
   }
@@ -252,6 +243,15 @@
   }
   .reveal div.callout-remark.callout-style-default .callout-icon::before, .reveal div.callout-remark.callout-titled .callout-icon::before {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23AD1457" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
+  }
+  .reveal div.callout-exr.callout {
+    border-left-color: #FFA500;
+  }
+  .reveal div.callout-exr.callout-style-default .callout-title {
+    background-color: rgba(255, 165, 0, 0.13);
+  }
+  .reveal div.callout-exr.callout-style-default .callout-icon::before, .reveal div.callout-exr.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23FFA500" class="bi bi-exclamation-triangle" viewBox="0 0 16 16"><path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/></svg>');
   }
   </style>
 </head>
@@ -320,14 +320,13 @@
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-regularity" class="quarto-xref">Example&nbsp;1</a></strong></p>
+<p><strong><a href="#/exm-regularity" class="quarto-xref">Example&nbsp;1</a> (Regularity and smoking)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-regularity" class="theorem example">
-<p><span class="theorem-title"><strong>Example 1</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 1 (Regularity and smoking)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="regularity-and-smoking">Regularity and smoking</h4>
-<p>Under a strict reading of the regularity view, “smoking causes lung cancer” would be false, because many smokers never develop lung cancer and some non-smokers do.</p>
+<p>Under a strict reading of the regularity view, “smoking causes lung cancer” would be false, because many smokers never develop lung cancer.</p>
 </div>
 </div>
 </div>
@@ -357,13 +356,12 @@
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-counterfactual-account" class="quarto-xref">Example&nbsp;2</a></strong></p>
+<p><strong><a href="#/exm-counterfactual-account" class="quarto-xref">Example&nbsp;2</a> (Counterfactual account and smoking cessation)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-counterfactual-account" class="theorem example">
-<p><span class="theorem-title"><strong>Example 2</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 2 (Counterfactual account and smoking cessation)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="counterfactual-account-and-smoking-cessation">Counterfactual account and smoking cessation</h4>
 <p>Suppose a patient quit smoking and did not develop lung cancer. On the counterfactual account, quitting prevented the cancer only if the patient would have developed lung cancer had they kept smoking. We never observe that second scenario. It is the <a href="./intro-causal.html#def-counterfactual">counterfactual outcome</a>.</p>
 </div>
 </div>
@@ -371,7 +369,7 @@
 </div>
 </div>
 <p>This account is the closest to <a href="./intro-causal.html#def-cause">the definition of a cause</a>. A potential outcome <span class="math inline">\(Y(a')\)</span> for an action <span class="math inline">\(a'\)</span> that did not occur is a counterfactual outcome, so the potential-outcomes framework makes counterfactual dependence something a statistical model can describe <span class="citation" data-cites="holland1986">(<a href="#/further-reading" role="doc-biblioref" onclick="">Holland 1986</a>)</span>.</p>
-<p>The account has two well-known difficulties. First, “the closest possible world” is a philosophical notion that has no obvious empirical meaning. Second, it handles redundant causes badly: if two sufficient causes were both present, removing either one leaves the effect in place, so neither counts as a cause. The potential-outcomes framework avoids the first difficulty by defining the counterfactual in terms of a specific action (<a href="./intro-causal.html#def-action">actions</a>, <a href="#/sec-manipulability" class="quarto-xref">Section&nbsp;2.3</a>), and mostly sidesteps the second by asking about the effect of one well-specified action at a time.</p>
+<p>The account has two well-known difficulties. First, “the closest possible world” is a philosophical notion that has no obvious empirical meaning. Second, it handles redundant causes badly: if two sufficient causes were both present, removing either one leaves the effect in place, so neither counts as a cause. The potential-outcomes framework avoids the first difficulty by defining the counterfactual in terms of a specific action (<a href="./intro-causal.html#def-action">actions</a>, <a href="#/sec-manipulability" class="quarto-xref">Section&nbsp;2.3</a>), but it does not remove the second: the effect of removing only one of two sufficient causes is still zero. Contrasting the outcome when both causes are removed with the outcome when neither is removed would show an effect, which is one reason to specify the whole intervention.</p>
 <h3 id="sec-manipulability">Manipulation and intervention</h3>
 <div class="callouty-titled">
 <div class="callout callout-def callout-titled callout-style-default">
@@ -384,24 +382,23 @@
 </div>
 <div class="callout-content">
 <div id="def-manipulability" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 3 (Manipulability account of causation)</strong></span> On the <strong>manipulability account</strong>, <span class="math inline">\(A\)</span> is a cause of <span class="math inline">\(B\)</span> if an intervention that changes <span class="math inline">\(A\)</span>, and that affects nothing else that bears on <span class="math inline">\(B\)</span>, would change <span class="math inline">\(B\)</span> <span class="citation" data-cites="woodward2003making">(<a href="#/further-reading" role="doc-biblioref" onclick="">Woodward 2003</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 3 (Manipulability account of causation)</strong></span> On the <strong>manipulability account</strong>, <span class="math inline">\(A\)</span> is a cause of <span class="math inline">\(B\)</span> if an intervention that changes <span class="math inline">\(A\)</span>, and that changes <span class="math inline">\(B\)</span> only by way of <span class="math inline">\(A\)</span>, would change <span class="math inline">\(B\)</span> <span class="citation" data-cites="woodward2003making">(<a href="#/further-reading" role="doc-biblioref" onclick="">Woodward 2003</a>)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Here the cause is something that someone could in principle change. Holland summarized this view as “no causation without manipulation” <span class="citation" data-cites="holland1986">(<a href="#/further-reading" role="doc-biblioref" onclick="">Holland 1986</a>)</span>.</p>
+<p>Here the cause is something that an intervention could in principle change. Holland summarized a stricter, agent-based version of this view as “no causation without manipulation” <span class="citation" data-cites="holland1986">(<a href="#/further-reading" role="doc-biblioref" onclick="">Holland 1986</a>)</span>.</p>
 <div class="callouty-titled">
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-manipulability" class="quarto-xref">Example&nbsp;3</a></strong></p>
+<p><strong><a href="#/exm-manipulability" class="quarto-xref">Example&nbsp;3</a> (Manipulability and a patient’s sex)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-manipulability" class="theorem example">
-<p><span class="theorem-title"><strong>Example 3</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 3 (Manipulability and a patient’s sex)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="manipulability-and-a-patients-sex">Manipulability and a patient’s sex</h4>
 <p>“What is the effect of a smoking-cessation program on lung cancer risk?” names an intervention that can be assigned, so it fits the manipulability account.</p>
 <p>“What is the effect of a patient’s sex on lung cancer risk?” does not name an intervention. On this account the question is not well posed until we say which intervention is meant.</p>
 </div>
@@ -422,7 +419,7 @@
 </div>
 <div class="callout-content">
 <div id="def-probabilistic-view" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4 (Probabilistic view of causation)</strong></span> On the <strong>probabilistic view</strong>, <span class="math inline">\(A\)</span> causes <span class="math inline">\(B\)</span> if <span class="math inline">\(A\)</span> raises the probability of <span class="math inline">\(B\)</span> after other relevant factors are held fixed <span class="citation" data-cites="suppes1970probabilistic">(<a href="#/further-reading" role="doc-biblioref" onclick="">Suppes 1970</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 4 (Probabilistic view of causation)</strong></span> On the <strong>probabilistic view</strong>, <span class="math inline">\(A\)</span> causes <span class="math inline">\(B\)</span> if <span class="math inline">\(A\)</span> occurs earlier than <span class="math inline">\(B\)</span>, <span class="math inline">\(A\)</span> raises the probability of <span class="math inline">\(B\)</span>, and other relevant earlier events do not explain that increase away <span class="citation" data-cites="suppes1970probabilistic">(<a href="#/further-reading" role="doc-biblioref" onclick="">Suppes 1970</a>)</span>.</p>
 </div>
 </div>
 </div>
@@ -433,20 +430,19 @@
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-probabilistic-view" class="quarto-xref">Example&nbsp;4</a></strong></p>
+<p><strong><a href="#/exm-probabilistic-view" class="quarto-xref">Example&nbsp;4</a> (Probability raising and smoking)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-probabilistic-view" class="theorem example">
-<p><span class="theorem-title"><strong>Example 4</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 4 (Probability raising and smoking)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="probability-raising-and-smoking">Probability raising and smoking</h4>
 <p>Smoking raises the probability of lung cancer among people who are alike in age and other relevant factors, and it does not make lung cancer certain. Under the probabilistic view, that is enough for smoking to be a cause of lung cancer.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
-<p>Its main difficulty is the one every observational study faces. Probability raising can come from confounding, so “after other relevant factors are held fixed” does the heavy lifting, and the view does not say which factors those are. <a href="./bias-analyses.html">The chapter on bias analyses</a> discusses how to handle that question in practice.</p>
+<p>Its main difficulty is the one every observational study faces. Probability raising can come from confounding, so the condition that other relevant earlier events do not explain the increase away does the heavy lifting, and the view does not say which events those are. <a href="./bias-analyses.html">The chapter on bias analyses</a> discusses how to handle that question in practice.</p>
 <h3 id="sec-mechanisms">Mechanisms</h3>
 <div class="callouty-titled">
 <div class="callout callout-def callout-titled callout-style-default">
@@ -459,7 +455,7 @@
 </div>
 <div class="callout-content">
 <div id="def-mechanistic-view" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 5 (Mechanistic view of causation)</strong></span> On the <strong>mechanistic view</strong>, <span class="math inline">\(A\)</span> causes <span class="math inline">\(B\)</span> if there is a mechanism, an organized set of entities and activities, that links <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span> <span class="citation" data-cites="machamer2000thinking">(<a href="#/further-reading" role="doc-biblioref" onclick="">Machamer et al. 2000</a>)</span>.</p>
+<p><span class="theorem-title"><strong>Definition 5 (Mechanistic view of causation)</strong></span> On the <strong>mechanistic view</strong>, <span class="math inline">\(A\)</span> causes <span class="math inline">\(B\)</span> if there is a mechanism, an organized set of entities and activities, that links <span class="math inline">\(A\)</span> to <span class="math inline">\(B\)</span>. This gloss builds on Machamer, Darden, and Craver’s account of mechanisms <span class="citation" data-cites="machamer2000thinking">(<a href="#/further-reading" role="doc-biblioref" onclick="">Machamer et al. 2000</a>)</span>, which analyzes mechanistic explanation and does not define causation itself.</p>
 </div>
 </div>
 </div>
@@ -469,13 +465,12 @@
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-mechanistic-view" class="quarto-xref">Example&nbsp;5</a></strong></p>
+<p><strong><a href="#/exm-mechanistic-view" class="quarto-xref">Example&nbsp;5</a> (Mechanism and smoking)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-mechanistic-view" class="theorem example">
-<p><span class="theorem-title"><strong>Example 5</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 5 (Mechanism and smoking)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="mechanism-and-smoking">Mechanism and smoking</h4>
 <p>A mechanistic account of smoking and lung cancer would describe the steps between inhaling smoke and the growth of a tumor, such as damage to cells’ DNA. Evidence about such steps can support the causal claim alongside the statistical evidence.</p>
 </div>
 </div>
@@ -514,7 +509,7 @@ Table&nbsp;1: Philosophical accounts of causation and where they appear in this 
 </tr>
 <tr class="odd">
 <td>Manipulability</td>
-<td>A cause is something one could change</td>
+<td>A cause is something an intervention could change</td>
 <td>Basis of the definitions of <a href="./intro-causal.html#def-action">actions</a> and <a href="./intro-causal.html#def-cause">causes</a></td>
 </tr>
 <tr class="even">
@@ -541,13 +536,12 @@ Table&nbsp;1: Philosophical accounts of causation and where they appear in this 
 <div class="callout callout-exm no-icon callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
-<p><strong><a href="#/exm-interventions" class="quarto-xref">Example&nbsp;6</a></strong></p>
+<p><strong><a href="#/exm-interventions" class="quarto-xref">Example&nbsp;6</a> (A well-defined and an ill-defined question)</strong></p>
 </div>
 <div class="callout-content">
 <div id="exm-interventions" class="theorem example">
-<p><span class="theorem-title"><strong>Example 6</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Example 6 (A well-defined and an ill-defined question)</strong></span> &nbsp;</p>
 <!-- no-figure: conceptual example with no data to plot -->
-<h4 id="a-well-defined-and-an-ill-defined-question">A well-defined and an ill-defined question</h4>
 <p>“What would a patient’s blood pressure be if they took 10 mg of a particular antihypertensive daily for a year?” names a specific intervention, so <span class="math inline">\(Y(a)\)</span> is meaningful.</p>
 <p>“What would a patient’s blood pressure be if they had a lower body weight?” does not. Diet, exercise, surgery, and illness all lower weight, and they plausibly affect blood pressure differently. We would need to specify a particular intervention to define the causal question.</p>
 </div>
