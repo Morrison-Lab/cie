@@ -14,6 +14,7 @@ project:
   render:
     - index.qmd
     - intro-causal.qmd
+    - philosophy-of-causality.qmd
     - collider-bias.qmd
     - bias-analyses.qmd
     - d_in_d.qmd
@@ -40,6 +41,8 @@ website:
         menu:
           - text: "Introduction to causal inference"
             href: intro-causal.qmd
+          - text: "Philosophy of causality"
+            href: philosophy-of-causality.qmd
           - text: "Collider bias"
             href: collider-bias.qmd
           - text: "Bias analyses"
@@ -55,6 +58,7 @@ website:
     contents:
       - index.qmd
       - intro-causal.qmd
+      - philosophy-of-causality.qmd
       - collider-bias.qmd
       - bias-analyses.qmd
       - d_in_d.qmd

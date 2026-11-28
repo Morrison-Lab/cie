@@ -1,0 +1,12 @@
+:::{#def-probabilistic-view}
+
+#### Probabilistic view of causation
+
+On the **probabilistic view**,
+$A$ causes $B$ if
+$A$ occurs earlier than $B$,
+$A$ raises the probability of $B$,
+and other relevant earlier events do not explain that increase away
+[@suppes1970probabilistic].
+
+:::

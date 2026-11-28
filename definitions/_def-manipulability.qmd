@@ -1,0 +1,11 @@
+:::{#def-manipulability}
+
+#### Manipulability account of causation
+
+On the **manipulability account**,
+$A$ is a cause of $B$
+if an intervention that changes $A$,
+and that changes $B$ only by way of $A$,
+would change $B$ [@woodward2003making].
+
+:::
